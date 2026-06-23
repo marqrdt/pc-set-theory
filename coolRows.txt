@@ -1,0 +1,417 @@
+> Task :compileJava UP-TO-DATE
+> Task :compileGroovy UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+
+> Task :runCoolRows
+
+Found cool row: <0 9 3 5 4 b 2 1 8 7 a 6> on row 193
+	Intervals: [9, 6, 2, 11, 7, 3, 11, 7, 11, 3, 8]
+	Interval Vector: [3, 1, 3, 1, 2, 1]
+
+Found cool row: <0 1 4 8 2 6 3 9 b 5 a 7> on row 761
+	Intervals: [1, 3, 4, 6, 4, 9, 6, 2, 6, 5, 9]
+	Interval Vector: [1, 1, 3, 2, 1, 3]
+
+Found cool row: <0 4 1 3 8 7 6 a 2 9 b 5> on row 2387
+	Intervals: [4, 9, 2, 5, 11, 11, 4, 4, 7, 2, 6]
+	Interval Vector: [2, 2, 1, 3, 2, 1]
+
+Found cool row: <0 9 7 3 1 a 8 4 b 5 6 2> on row 2906
+	Intervals: [9, 10, 8, 10, 9, 10, 8, 7, 6, 1, 8]
+	Interval Vector: [1, 3, 2, 3, 1, 1]
+
+Found cool row: <0 5 b 9 1 a 7 4 6 8 2 3> on row 3058
+	Intervals: [5, 6, 10, 4, 9, 9, 9, 2, 2, 6, 1]
+	Interval Vector: [1, 3, 3, 1, 1, 2]
+
+Found cool row: <0 5 6 9 7 4 1 2 8 3 b a> on row 3386
+	Intervals: [5, 1, 3, 10, 9, 9, 1, 6, 7, 8, 11]
+	Interval Vector: [3, 1, 3, 1, 2, 1]
+
+Found cool row: <0 5 2 6 3 4 a 9 7 8 1 b> on row 6349
+	Intervals: [5, 9, 4, 9, 1, 6, 11, 10, 1, 5, 10]
+	Interval Vector: [3, 2, 2, 1, 2, 1]
+
+Found cool row: <0 8 4 a 9 7 3 5 2 b 1 6> on row 6462
+	Intervals: [8, 8, 6, 11, 10, 8, 2, 9, 9, 2, 5]
+	Interval Vector: [1, 3, 2, 3, 1, 1]
+
+Found cool row: <0 a 3 2 4 9 1 7 b 5 8 6> on row 7220
+	Intervals: [10, 5, 11, 2, 5, 4, 6, 4, 6, 3, 10]
+	Interval Vector: [1, 3, 1, 2, 2, 2]
+
+Found cool row: <0 1 6 9 a 3 5 b 7 4 8 2> on row 7486
+	Intervals: [1, 5, 3, 1, 5, 2, 6, 8, 9, 4, 6]
+	Interval Vector: [2, 1, 2, 2, 2, 2]
+
+Found cool row: <0 8 2 4 a 9 6 1 3 7 b 5> on row 7654
+	Intervals: [8, 6, 2, 6, 11, 9, 7, 2, 4, 4, 6]
+	Interval Vector: [1, 2, 1, 3, 1, 3]
+
+Found cool row: <0 a 5 2 1 3 9 4 8 7 b 6> on row 9116
+	Intervals: [10, 7, 9, 11, 2, 6, 7, 4, 11, 4, 7]
+	Interval Vector: [2, 2, 1, 2, 3, 1]
+
+Found cool row: <0 1 a 5 9 7 b 6 3 2 8 4> on row 9591
+	Intervals: [1, 9, 7, 4, 10, 4, 7, 9, 11, 6, 8]
+	Interval Vector: [2, 1, 2, 3, 2, 1]
+
+Found cool row: <0 5 8 4 3 9 b 1 2 a 7 6> on row 11074
+	Intervals: [5, 3, 8, 11, 6, 2, 2, 1, 8, 9, 11]
+	Interval Vector: [3, 2, 2, 2, 1, 1]
+
+Found cool row: <0 9 3 6 a 8 2 7 4 5 b 1> on row 11993
+	Intervals: [9, 6, 3, 4, 10, 6, 5, 9, 1, 6, 2]
+	Interval Vector: [1, 2, 3, 1, 1, 3]
+
+Found cool row: <0 1 6 5 3 9 7 b 2 8 4 a> on row 12228
+	Intervals: [1, 5, 11, 10, 6, 10, 4, 3, 6, 8, 6]
+	Interval Vector: [2, 2, 1, 2, 1, 3]
+
+Found cool row: <0 1 b 7 a 6 8 2 9 3 4 5> on row 14151
+	Intervals: [1, 10, 8, 3, 8, 2, 6, 7, 6, 1, 1]
+	Interval Vector: [3, 2, 1, 2, 1, 2]
+
+Found cool row: <0 4 6 7 1 8 3 9 a 5 b 2> on row 15755
+	Intervals: [4, 2, 1, 6, 7, 7, 6, 1, 7, 6, 3]
+	Interval Vector: [2, 1, 1, 1, 3, 3]
+
+Found cool row: <0 4 b 2 9 8 3 6 a 1 7 5> on row 16544
+	Intervals: [4, 7, 3, 7, 11, 7, 3, 4, 3, 6, 10]
+	Interval Vector: [1, 1, 3, 2, 3, 1]
+
+Found cool row: <0 6 3 1 9 2 8 5 7 b a 4> on row 16648
+	Intervals: [6, 9, 10, 8, 5, 6, 9, 2, 4, 11, 6]
+	Interval Vector: [1, 2, 2, 2, 1, 3]
+
+Found cool row: <0 4 6 7 9 1 b 5 8 2 a 3> on row 18072
+	Intervals: [4, 2, 1, 2, 4, 10, 6, 3, 6, 8, 5]
+	Interval Vector: [1, 3, 1, 3, 1, 2]
+
+Found cool row: <0 8 2 a 1 b 6 7 9 4 5 3> on row 18498
+	Intervals: [8, 6, 8, 3, 10, 7, 1, 2, 7, 1, 10]
+	Interval Vector: [2, 3, 1, 2, 2, 1]
+
+Found cool row: <0 1 9 4 3 a 8 6 5 b 2 7> on row 20979
+	Intervals: [1, 8, 7, 11, 7, 10, 10, 11, 6, 3, 5]
+	Interval Vector: [3, 2, 1, 1, 3, 1]
+
+Found cool row: <0 9 3 8 a b 5 4 2 6 1 7> on row 24041
+	Intervals: [9, 6, 5, 2, 1, 6, 11, 10, 4, 7, 6]
+	Interval Vector: [2, 2, 1, 1, 2, 3]
+
+Found cool row: <0 4 7 9 2 3 8 a 1 b 5 6> on row 24271
+	Intervals: [4, 3, 2, 5, 1, 5, 2, 3, 10, 6, 1]
+	Interval Vector: [2, 3, 2, 1, 2, 1]
+
+Found cool row: <0 4 3 1 8 b 5 2 9 7 6 a> on row 26014
+	Intervals: [4, 11, 10, 7, 3, 6, 9, 7, 10, 11, 4]
+	Interval Vector: [2, 2, 2, 2, 2, 1]
+
+Found cool row: <0 1 7 a 8 b 3 2 5 6 4 9> on row 26402
+	Intervals: [1, 6, 3, 10, 3, 4, 11, 3, 1, 10, 5]
+	Interval Vector: [3, 2, 3, 1, 1, 1]
+
+Found cool row: <0 1 8 9 3 6 4 2 a b 7 5> on row 26694
+	Intervals: [1, 7, 1, 6, 3, 10, 10, 8, 1, 8, 10]
+	Interval Vector: [3, 3, 1, 2, 1, 1]
+
+Found cool row: <0 6 7 b 1 8 9 3 5 2 4 a> on row 27332
+	Intervals: [6, 1, 4, 2, 7, 1, 6, 2, 9, 2, 6]
+	Interval Vector: [2, 3, 1, 1, 1, 3]
+
+Found cool row: <0 5 8 a 4 6 1 9 7 3 2 b> on row 29105
+	Intervals: [5, 3, 2, 6, 2, 7, 8, 10, 8, 11, 9]
+	Interval Vector: [1, 3, 2, 2, 2, 1]
+
+Found cool row: <0 9 4 a 7 b 1 8 2 3 5 6> on row 29684
+	Intervals: [9, 7, 6, 9, 4, 2, 7, 6, 1, 2, 1]
+	Interval Vector: [2, 2, 2, 1, 2, 2]
+
+Found cool row: <0 5 9 b 8 6 a 4 7 1 2 3> on row 30236
+	Intervals: [5, 4, 2, 9, 10, 4, 6, 3, 6, 1, 1]
+	Interval Vector: [2, 2, 2, 2, 1, 2]
+
+Found cool row: <0 4 a 6 b 9 1 7 8 2 5 3> on row 30886
+	Intervals: [4, 6, 8, 5, 10, 4, 6, 1, 6, 3, 10]
+	Interval Vector: [1, 2, 1, 3, 1, 3]
+
+Found cool row: <0 7 8 2 b 3 1 9 4 6 5 a> on row 31377
+	Intervals: [7, 1, 6, 9, 4, 10, 8, 7, 2, 11, 5]
+	Interval Vector: [2, 2, 1, 2, 3, 1]
+
+Found cool row: <0 6 2 b 4 1 8 a 9 5 3 7> on row 31976
+	Intervals: [6, 8, 9, 5, 9, 7, 2, 11, 8, 10, 4]
+	Interval Vector: [1, 2, 2, 3, 2, 1]
+
+Found cool row: <0 3 9 2 a 6 4 5 7 b 1 8> on row 32347
+	Intervals: [3, 6, 5, 8, 8, 10, 1, 2, 4, 2, 7]
+	Interval Vector: [1, 3, 1, 3, 2, 1]
+
+Found cool row: <0 b 7 4 a 2 8 6 1 3 9 5> on row 32528
+	Intervals: [11, 8, 9, 6, 4, 6, 10, 7, 2, 6, 8]
+	Interval Vector: [1, 2, 1, 3, 1, 3]
+
+Found cool row: <0 2 b 5 4 a 6 8 3 7 1 9> on row 33643
+	Intervals: [2, 9, 6, 11, 6, 8, 2, 7, 4, 6, 8]
+	Interval Vector: [1, 2, 1, 3, 1, 3]
+
+Found cool row: <0 6 2 7 5 3 8 9 b 4 a 1> on row 34507
+	Intervals: [6, 8, 5, 10, 10, 5, 1, 2, 5, 6, 3]
+	Interval Vector: [1, 3, 1, 1, 3, 2]
+
+Found cool row: <0 6 2 5 1 7 8 9 b 3 a 4> on row 34880
+	Intervals: [6, 8, 3, 8, 6, 1, 1, 2, 4, 7, 6]
+	Interval Vector: [2, 1, 1, 3, 1, 3]
+
+Found cool row: <0 9 2 6 7 5 3 8 1 b a 4> on row 35361
+	Intervals: [9, 5, 4, 1, 10, 10, 5, 5, 10, 11, 6]
+	Interval Vector: [2, 3, 1, 1, 3, 1]
+
+Found cool row: <0 4 7 8 2 9 6 1 a 5 3 b> on row 35364
+	Intervals: [4, 3, 1, 6, 7, 9, 7, 9, 7, 10, 8]
+	Interval Vector: [1, 1, 3, 2, 3, 1]
+
+Found cool row: <0 3 6 a b 1 8 2 7 9 4 5> on row 35458
+	Intervals: [3, 3, 4, 1, 2, 7, 6, 5, 2, 7, 1]
+	Interval Vector: [2, 2, 2, 1, 3, 1]
+
+Found cool row: <0 3 6 7 2 4 5 b a 8 1 9> on row 35954
+	Intervals: [3, 3, 1, 7, 2, 1, 6, 11, 10, 5, 8]
+	Interval Vector: [3, 2, 2, 1, 2, 1]
+
+Found cool row: <0 6 4 a 5 b 2 3 1 9 7 8> on row 38049
+	Intervals: [6, 10, 6, 7, 6, 3, 1, 10, 8, 10, 1]
+	Interval Vector: [2, 3, 1, 1, 1, 3]
+
+Found cool row: <0 3 9 b 4 5 a 7 8 1 2 6> on row 39158
+	Intervals: [3, 6, 2, 5, 1, 5, 9, 1, 5, 1, 4]
+	Interval Vector: [3, 1, 2, 1, 3, 1]
+
+Found cool row: <0 6 8 4 a 5 2 1 b 7 9 3> on row 40181
+	Intervals: [6, 2, 8, 6, 7, 9, 11, 10, 8, 2, 6]
+	Interval Vector: [1, 3, 1, 2, 1, 3]
+
+Found cool row: <0 8 a 5 b 4 2 3 6 7 1 9> on row 42043
+	Intervals: [8, 2, 7, 6, 5, 10, 1, 3, 1, 6, 8]
+	Interval Vector: [2, 2, 1, 2, 2, 2]
+
+Found cool row: <0 a 4 3 9 7 b 2 5 8 6 1> on row 43095
+	Intervals: [10, 6, 11, 6, 10, 4, 3, 3, 3, 10, 7]
+	Interval Vector: [1, 3, 3, 1, 1, 2]
+
+Found cool row: <0 6 8 2 b 3 1 7 5 4 9 a> on row 46026
+	Intervals: [6, 2, 6, 9, 4, 10, 6, 10, 11, 5, 1]
+	Interval Vector: [2, 3, 1, 1, 1, 3]
+
+Found cool row: <0 9 1 8 2 7 5 3 b a 6 4> on row 46485
+	Intervals: [9, 4, 7, 6, 5, 10, 10, 8, 11, 8, 10]
+	Interval Vector: [1, 3, 1, 3, 2, 1]
+
+Found cool row: <0 6 b 7 1 2 5 a 8 4 9 3> on row 47100
+	Intervals: [6, 5, 8, 6, 1, 3, 5, 10, 8, 5, 6]
+	Interval Vector: [1, 1, 1, 2, 3, 3]
+
+Found cool row: <0 6 5 8 1 3 7 9 2 b 4 a> on row 47559
+	Intervals: [6, 11, 3, 5, 2, 4, 2, 5, 9, 5, 6]
+	Interval Vector: [1, 2, 2, 1, 3, 2]
+
+Found cool row: <0 7 3 6 a 4 2 1 b 5 9 8> on row 47738
+	Intervals: [7, 8, 3, 4, 6, 10, 11, 10, 6, 4, 11]
+	Interval Vector: [2, 2, 1, 3, 1, 2]
+
+Found cool row: <0 5 2 3 9 4 6 7 b a 1 8> on row 48249
+	Intervals: [5, 9, 1, 6, 7, 2, 1, 4, 11, 3, 7]
+	Interval Vector: [3, 1, 2, 1, 3, 1]
+
+Found cool row: <0 5 9 3 4 7 6 b 8 a 2 1> on row 50270
+	Intervals: [5, 4, 6, 1, 3, 11, 5, 9, 2, 4, 11]
+	Interval Vector: [3, 1, 2, 2, 2, 1]
+
+Found cool row: <0 6 2 1 b 8 a 5 7 4 9 3> on row 53781
+	Intervals: [6, 8, 11, 10, 9, 2, 7, 2, 9, 5, 6]
+	Interval Vector: [1, 3, 2, 1, 2, 2]
+
+Found cool row: <0 a 5 b 7 6 9 8 3 2 4 1> on row 54012
+	Intervals: [10, 7, 6, 8, 11, 3, 11, 7, 11, 2, 9]
+	Interval Vector: [3, 2, 2, 1, 2, 1]
+
+Found cool row: <0 6 8 4 a b 2 7 1 3 5 9> on row 55194
+	Intervals: [6, 2, 8, 6, 1, 3, 5, 6, 2, 2, 4]
+	Interval Vector: [1, 3, 1, 2, 1, 3]
+
+Found cool row: <0 1 a 6 b 9 5 4 7 2 8 3> on row 55626
+	Intervals: [1, 9, 8, 5, 10, 8, 11, 3, 7, 6, 7]
+	Interval Vector: [2, 1, 2, 2, 3, 1]
+
+Found cool row: <0 8 a 4 3 6 b 2 1 7 5 9> on row 56319
+	Intervals: [8, 2, 6, 11, 3, 5, 3, 11, 6, 10, 4]
+	Interval Vector: [2, 2, 2, 2, 1, 2]
+
+Found cool row: <0 2 a 3 4 8 5 b 9 7 1 6> on row 56808
+	Intervals: [2, 8, 5, 1, 4, 9, 6, 10, 10, 6, 5]
+	Interval Vector: [1, 3, 1, 2, 2, 2]
+
+Found cool row: <0 a 6 8 2 1 4 b 5 9 7 3> on row 56936
+	Intervals: [10, 8, 2, 6, 11, 3, 7, 6, 4, 10, 8]
+	Interval Vector: [1, 3, 1, 3, 1, 2]
+
+Found cool row: <0 4 a 6 7 9 b 5 2 8 1 3> on row 58326
+	Intervals: [4, 6, 8, 1, 2, 2, 6, 9, 6, 5, 2]
+	Interval Vector: [1, 3, 1, 2, 1, 3]
+
+Found cool row: <0 8 2 4 b 3 5 6 7 9 1 a> on row 59594
+	Intervals: [8, 6, 2, 7, 4, 2, 1, 1, 2, 4, 9]
+	Interval Vector: [2, 3, 1, 3, 1, 1]
+
+Found cool row: <0 6 9 1 3 8 2 b 7 a 4 5> on row 62579
+	Intervals: [6, 3, 4, 2, 5, 6, 9, 8, 3, 6, 1]
+	Interval Vector: [1, 1, 3, 2, 1, 3]
+
+Found cool row: <0 1 5 2 8 3 9 7 6 4 a b> on row 62952
+	Intervals: [1, 4, 9, 6, 7, 6, 10, 11, 10, 6, 1]
+	Interval Vector: [3, 2, 1, 1, 1, 3]
+
+Found cool row: <0 6 7 9 2 4 1 5 b 3 8 a> on row 63886
+	Intervals: [6, 1, 2, 5, 2, 9, 4, 6, 4, 5, 2]
+	Interval Vector: [1, 3, 1, 2, 2, 2]
+
+Found cool row: <0 b 7 a 4 2 8 6 1 9 3 5> on row 65189
+	Intervals: [11, 8, 3, 6, 10, 6, 10, 7, 8, 6, 2]
+	Interval Vector: [1, 3, 1, 2, 1, 3]
+
+Found cool row: <0 4 a 6 b 9 1 7 8 2 5 3> on row 66797
+	Intervals: [4, 6, 8, 5, 10, 4, 6, 1, 6, 3, 10]
+	Interval Vector: [1, 2, 1, 3, 1, 3]
+
+Found cool row: <0 6 5 1 7 8 b 4 2 a 3 9> on row 67060
+	Intervals: [6, 11, 8, 6, 1, 3, 5, 10, 8, 5, 6]
+	Interval Vector: [2, 1, 1, 2, 2, 3]
+
+Found cool row: <0 1 2 4 6 8 9 5 b 3 a 7> on row 67224
+	Intervals: [1, 1, 2, 2, 2, 1, 8, 6, 4, 7, 9]
+	Interval Vector: [3, 3, 1, 2, 1, 1]
+
+Found cool row: <0 9 3 4 5 b 1 a 6 2 7 8> on row 69962
+	Intervals: [9, 6, 1, 1, 6, 2, 9, 8, 8, 5, 1]
+	Interval Vector: [3, 1, 2, 2, 1, 2]
+
+Found cool row: <0 5 1 a 2 3 9 4 6 7 8 b> on row 70773
+	Intervals: [5, 8, 9, 4, 1, 6, 7, 2, 1, 1, 3]
+	Interval Vector: [3, 1, 2, 2, 2, 1]
+
+Found cool row: <0 2 7 1 a 4 8 9 b 3 5 6> on row 71521
+	Intervals: [2, 5, 6, 9, 6, 4, 1, 2, 4, 2, 1]
+	Interval Vector: [2, 3, 1, 2, 1, 2]
+
+Found cool row: <0 a 4 8 2 9 6 5 7 3 b 1> on row 71841
+	Intervals: [10, 6, 4, 6, 7, 9, 11, 2, 8, 8, 2]
+	Interval Vector: [1, 3, 1, 3, 1, 2]
+
+Found cool row: <0 b 8 6 a 3 7 1 5 4 2 9> on row 72320
+	Intervals: [11, 9, 10, 4, 5, 4, 6, 4, 11, 10, 7]
+	Interval Vector: [2, 2, 1, 3, 2, 1]
+
+Found cool row: <0 b 3 2 8 1 5 a 7 4 6 9> on row 73136
+	Intervals: [11, 4, 11, 6, 5, 4, 5, 9, 9, 2, 3]
+	Interval Vector: [2, 1, 3, 2, 2, 1]
+
+Found cool row: <0 9 6 3 4 a 5 1 b 7 8 2> on row 74256
+	Intervals: [9, 9, 9, 1, 6, 7, 8, 10, 8, 1, 6]
+	Interval Vector: [2, 1, 3, 2, 1, 2]
+
+Found cool row: <0 2 1 4 7 a 6 8 3 9 b 5> on row 74702
+	Intervals: [2, 11, 3, 3, 3, 8, 2, 7, 6, 2, 6]
+	Interval Vector: [1, 3, 3, 1, 1, 2]
+
+Found cool row: <0 b 7 1 8 6 3 5 4 a 2 9> on row 78828
+	Intervals: [11, 8, 6, 7, 10, 9, 2, 11, 6, 4, 7]
+	Interval Vector: [2, 2, 1, 2, 2, 2]
+
+Found cool row: <0 5 2 8 1 7 4 9 b a 6 3> on row 79029
+	Intervals: [5, 9, 6, 5, 6, 9, 5, 2, 11, 8, 9]
+	Interval Vector: [1, 1, 3, 1, 3, 2]
+
+Found cool row: <0 1 a 4 8 6 3 b 9 5 7 2> on row 79208
+	Intervals: [1, 9, 6, 4, 10, 9, 8, 10, 8, 2, 7]
+	Interval Vector: [1, 3, 2, 3, 1, 1]
+
+Found cool row: <0 6 1 5 2 9 7 8 b 3 4 a> on row 80968
+	Intervals: [6, 7, 4, 9, 7, 10, 1, 3, 4, 1, 6]
+	Interval Vector: [2, 1, 2, 2, 2, 2]
+
+Found cool row: <0 5 3 b 2 a 8 9 6 4 7 1> on row 82858
+	Intervals: [5, 10, 8, 3, 8, 10, 1, 9, 10, 3, 6]
+	Interval Vector: [1, 3, 3, 2, 1, 1]
+
+Found cool row: <0 2 8 9 3 5 1 a 7 4 6 b> on row 82955
+	Intervals: [2, 6, 1, 6, 2, 8, 9, 9, 9, 2, 5]
+	Interval Vector: [1, 3, 3, 1, 1, 2]
+
+Found cool row: <0 6 4 5 a b 2 9 3 7 1 8> on row 84036
+	Intervals: [6, 10, 1, 5, 1, 3, 7, 6, 4, 6, 7]
+	Interval Vector: [2, 1, 1, 1, 3, 3]
+
+Found cool row: <0 3 8 6 2 b 7 9 1 a 4 5> on row 84196
+	Intervals: [3, 5, 10, 8, 9, 8, 2, 4, 9, 6, 1]
+	Interval Vector: [1, 2, 3, 3, 1, 1]
+
+Found cool row: <0 6 8 b 7 3 5 1 4 a 9 2> on row 85432
+	Intervals: [6, 2, 3, 8, 8, 2, 8, 3, 6, 11, 5]
+	Interval Vector: [1, 2, 2, 3, 1, 2]
+
+Found cool row: <0 9 6 a b 5 3 1 4 2 7 8> on row 85860
+	Intervals: [9, 9, 4, 1, 6, 10, 10, 3, 10, 5, 1]
+	Interval Vector: [2, 3, 3, 1, 1, 1]
+
+Found cool row: <0 5 9 8 2 7 4 3 1 b a 6> on row 86507
+	Intervals: [5, 4, 11, 6, 5, 9, 11, 10, 10, 11, 8]
+	Interval Vector: [3, 2, 1, 2, 2, 1]
+
+Found cool row: <0 b 9 3 4 a 5 8 1 7 6 2> on row 88438
+	Intervals: [11, 10, 6, 1, 6, 7, 3, 5, 6, 11, 8]
+	Interval Vector: [3, 1, 1, 1, 2, 3]
+
+Found cool row: <0 6 1 5 7 8 b 4 a 2 9 3> on row 89746
+	Intervals: [6, 7, 4, 2, 1, 3, 5, 6, 4, 7, 6]
+	Interval Vector: [1, 1, 1, 2, 3, 3]
+
+Found cool row: <0 3 8 6 b 2 1 7 4 a 9 5> on row 89827
+	Intervals: [3, 5, 10, 5, 3, 11, 6, 9, 6, 11, 8]
+	Interval Vector: [2, 1, 3, 1, 2, 2]
+
+Found cool row: <0 7 9 1 2 6 4 a 5 b 8 3> on row 90221
+	Intervals: [7, 2, 4, 1, 4, 10, 6, 7, 6, 9, 7]
+	Interval Vector: [1, 2, 1, 2, 3, 2]
+
+Found cool row: <0 5 7 3 8 4 a 9 6 1 b 2> on row 90654
+	Intervals: [5, 2, 8, 5, 8, 6, 11, 9, 7, 10, 3]
+	Interval Vector: [1, 2, 2, 2, 3, 1]
+
+Found cool row: <0 2 b 7 8 a 1 3 9 4 5 6> on row 92129
+	Intervals: [2, 9, 8, 1, 2, 3, 2, 6, 7, 1, 1]
+	Interval Vector: [3, 3, 2, 1, 1, 1]
+
+Found cool row: <0 b 6 4 5 2 a 7 1 3 8 9> on row 95204
+	Intervals: [11, 7, 10, 1, 9, 8, 9, 6, 2, 5, 1]
+	Interval Vector: [3, 2, 2, 1, 2, 1]
+
+Found cool row: <0 7 2 6 4 8 5 b 1 3 9 a> on row 98421
+	Intervals: [7, 7, 4, 10, 4, 9, 6, 2, 2, 6, 1]
+	Interval Vector: [1, 3, 1, 2, 2, 2]
+
+Found cool row: <0 5 1 7 b 6 9 a 4 2 8 3> on row 98823
+	Intervals: [5, 8, 6, 4, 7, 3, 1, 6, 10, 6, 7]
+	Interval Vector: [1, 1, 1, 2, 3, 3]
+
+Found cool row: <0 8 2 1 a 5 7 9 b 6 3 4> on row 99661
+	Intervals: [8, 6, 11, 9, 7, 2, 2, 2, 7, 9, 1]
+	Interval Vector: [2, 3, 2, 1, 2, 1]
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/7.0/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 1m 21s
+3 actionable tasks: 1 executed, 2 up-to-date

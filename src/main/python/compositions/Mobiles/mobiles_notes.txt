@@ -1,0 +1,1 @@
+All-interval Row from source hexachords '6-Z17', '6-Z43': [4, 6, 11, 0, 8, 5, 3, 2, 9, 1, 7, 10]

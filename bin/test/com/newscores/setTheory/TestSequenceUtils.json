@@ -1,0 +1,58 @@
+{
+	"SetA":
+	{
+		"pitches":
+			"0,4,6,3,2,5,8",
+		"type":
+			"PitchClassSequence"
+	},
+	"SetB":
+	{
+		"pitches":
+			"0 B 1 2 A 8 5 3 9 4 7 6",
+		"type":
+			"PitchClassSequence"
+	},
+	"SchoenbergVlnConHex":
+	{
+		"pitches":
+			"9 A 3 b 4 6",
+		"type":
+			"PitchClassSequence"
+	},
+	"GlassRow":
+	{
+		"pitches":
+			"0 3 1 2 b 6 4 5 7 9 8 A",
+		"type":
+			"PitchClassSequence"
+	},
+	"BigSet":
+	{
+		"pitches":
+		"0 B 1 2 A 8 5 3 9 4 7 6",
+		"type":
+		"PitchClassSequence"
+	},
+	"IncludedSetA":
+	{
+		"pitches":
+		"0 B 1 2 A 8 5 3 9 4 7 6",
+		"type":
+		"PitchClassSequence"
+	},
+	"IncludedSetB":
+	{
+		"pitches":
+		"0 B 1 2 A 8 5 3 9 4 7 6",
+		"type":
+		"PitchClassSequence"
+	},
+	"NonIncludedSetA":
+	{
+		"pitches":
+		"0 B 1 2 A 8 5 3 9 4 7 6",
+		"type":
+		"PitchClassSequence"
+	}
+}
