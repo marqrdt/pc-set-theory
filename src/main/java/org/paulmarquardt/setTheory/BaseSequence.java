@@ -1,9 +1,9 @@
- package com.newscores.setTheory;
+ package org.paulmarquardt.setTheory;
 
 import java.io.IOException;
 import java.util.*;
 
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 import com.fasterxml.jackson.core.JsonGenerationException;
