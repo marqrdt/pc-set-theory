@@ -1,11 +1,11 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 public class Row extends ImmutablePitchClassSequence implements ISequence {
 

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.paulmarquardt.setTheory.TestSetUtils" time="0.001" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/marqrdt/git/pc-set-theory/target/test-classes:/home/marqrdt/git/pc-set-theory/target/classes:/home/marqrdt/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/marqrdt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/marqrdt/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.0/jackson-databind-2.22.0.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.0/jackson-core-2.22.0.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/home/marqrdt/.m2/repository/com/github/dpaukov/combinatoricslib3/3.4.0/combinatoricslib3-3.4.0.jar:/home/marqrdt/.m2/repository/org/json/json/20260522/json-20260522.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.redhat.com/"/>
+    <property name="user.timezone" value="America/Denver"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-25-openjdk/lib"/>
+    <property name="sun.java.command" value="/home/marqrdt/git/pc-set-theory/target/surefire/surefirebooter-20260626110012606_3.jar /home/marqrdt/git/pc-set-theory/target/surefire 2026-06-26T11-00-12_554-jvmRun1 surefire-20260626110012606_1tmp surefire_0-20260626110012606_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/marqrdt/git/pc-set-theory/target/test-classes:/home/marqrdt/git/pc-set-theory/target/classes:/home/marqrdt/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/marqrdt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/marqrdt/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.0/jackson-databind-2.22.0.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.0/jackson-core-2.22.0.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/home/marqrdt/.m2/repository/com/github/dpaukov/combinatoricslib3/3.4.0/combinatoricslib3-3.4.0.jar:/home/marqrdt/.m2/repository/org/json/json/20260522/json-20260522.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/marqrdt"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="/usr/lib/jvm/java-25-openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/marqrdt/git/pc-set-theory"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/marqrdt/git/pc-set-theory/target/surefire/surefirebooter-20260626110012606_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.3+9"/>
+    <property name="user.name" value="marqrdt"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="7.0.12-201.fc44.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-25.0.3.0.9-1)"/>
+    <property name="localRepository" value="/home/marqrdt/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=java-25-openjdk&amp;version=42"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="25.0.3"/>
+    <property name="user.dir" value="/home/marqrdt/git/pc-set-theory"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="25.0.3+9"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testRandomSets" classname="org.paulmarquardt.setTheory.TestSetUtils" time="0.001">
+    <system-out><![CDATA[Test random pitch class sets using SetUtils.randomSet().
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 0 using SetUtils.randomSet(): [].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [0].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [9].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [6].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [9].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [A].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [2].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [0].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [4].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [B].
+Random pitch class sets of size 1 using SetUtils.randomSet(): [B].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [03].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [04].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [05].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [14].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [58].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [46].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [4B].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [1B].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [9A].
+Random pitch class sets of size 2 using SetUtils.randomSet(): [5A].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [34A].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [048].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [249].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [04B].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [347].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [34A].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [026].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [137].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [26B].
+Random pitch class sets of size 3 using SetUtils.randomSet(): [49A].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [0147].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [0489].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [0569].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [359A].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [568B].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [023B].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [38AB].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [035A].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [179A].
+Random pitch class sets of size 4 using SetUtils.randomSet(): [457B].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [12679].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [15789].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [01589].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [2357A].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [2679A].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [05678].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [0169A].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [12469].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [03467].
+Random pitch class sets of size 5 using SetUtils.randomSet(): [037AB].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [0467AB].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [145678].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [1578AB].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [03456A].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [235689].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [01469A].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [02478B].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [01359B].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [1456AB].
+Random pitch class sets of size 6 using SetUtils.randomSet(): [01378B].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [012468A].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [014578B].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [034789B].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [024679B].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [0123456].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [134689A].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [023578A].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [013469A].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [013678B].
+Random pitch class sets of size 7 using SetUtils.randomSet(): [13478AB].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [0124678A].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [1345689B].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [0145679B].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [012389AB].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [0134789A].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [0345789A].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [0135689A].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [012679AB].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [12346789].
+Random pitch class sets of size 8 using SetUtils.randomSet(): [02345789].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [12356789B].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [01346789A].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [0134568AB].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [0123458AB].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [01345679B].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [0156789AB].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [01234678B].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [02345689B].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [01234578B].
+Random pitch class sets of size 9 using SetUtils.randomSet(): [2456789AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [01245789AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [02345689AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [01245679AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [12356789AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [123456789A].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [01345689AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [01234789AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [012345679A].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [01236789AB].
+Random pitch class sets of size 10 using SetUtils.randomSet(): [012346789A].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [012346789AB].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [013456789AB].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [0123456789B].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [012346789AB].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [012456789AB].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [012345679AB].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [0123456789B].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [0123456789B].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [012345689AB].
+Random pitch class sets of size 11 using SetUtils.randomSet(): [012345679AB].
+]]></system-out>
+  </testcase>
+</testsuite>

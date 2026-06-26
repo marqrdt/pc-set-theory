@@ -1,15 +1,15 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
-import com.newscores.setTheory.utils.SequenceUtils;
+import org.paulmarquardt.setTheory.utils.SequenceUtils;
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
 import java.util.*;
 
-import com.newscores.setTheory.PitchClassSequence;
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.PitchClassSequence;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 import javax.sound.midi.Sequencer;
 import java.io.IOException;

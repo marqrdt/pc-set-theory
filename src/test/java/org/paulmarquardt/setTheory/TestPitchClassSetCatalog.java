@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 import java.util.*;
 import java.util.logging.Logger;
 
-import com.newscores.setTheory.*;
+import org.paulmarquardt.setTheory.*;
 
 /**
  * Unit test for simple App.

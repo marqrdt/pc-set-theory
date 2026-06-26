@@ -1,7 +1,7 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.*;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 /**
  * A Contour describes a shape in space and time. It is a Compositional pattern (in the sense of the Composition Design Pattern, not Music Composition) consisting

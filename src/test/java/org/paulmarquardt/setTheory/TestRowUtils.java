@@ -1,15 +1,15 @@
 
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
 import java.util.*;
 
-import com.newscores.setTheory.Row;
-import com.newscores.setTheory.interfaces.*;
-import com.newscores.setTheory.utils.CompositionMatrixUtils;
-import com.newscores.setTheory.utils.RowUtils;
+import org.paulmarquardt.setTheory.Row;
+import org.paulmarquardt.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.utils.CompositionMatrixUtils;
+import org.paulmarquardt.setTheory.utils.RowUtils;
 import java.util.logging.Logger;
 
 

@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.apache.commons.lang.*;
 
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 import org.apache.commons.lang.StringUtils;
 import java.io.IOException;
 

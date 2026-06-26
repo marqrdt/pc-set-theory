@@ -1,7 +1,7 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
-import com.newscores.setTheory.interfaces.*;
-import com.newscores.setTheory.*;
+import org.paulmarquardt.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.*;
 import com.fasterxml.jackson.databind.jsontype.impl.*;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.annotation.*;

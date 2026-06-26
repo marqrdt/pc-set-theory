@@ -1,9 +1,9 @@
- package com.newscores.setTheory;
+ package org.paulmarquardt.setTheory;
 
 import java.util.*;
 import java.util.regex.*;
 
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 import com.fasterxml.jackson.annotation.*;
 
  @JsonPropertyOrder({ "name", "members", "transformation", "descriptor" })
@@ -426,7 +426,20 @@ public class PitchSequence extends BaseSequence implements IMutableSequence, Ite
 		}
 		return vector;
 	}
-		
+
+	public float polarity() {
+		if ( this.getMembers().size() == 0) {
+			return 0.0f;
+		}
+		int odd_count = 0;
+		for ( int i = 1; i < this.getMembers().size(); i++ ) {
+			if ( (this.getMembers().get(i) - this.getMembers().get(i - 1)) % 2 == 1) {
+				odd_count += 1;
+			}
+		}
+		return ((float) odd_count / (this.getMembers().size() - 1) );
+	}
+
 	/**
 	 * Returns true if each member of this is equal the member of anotherSeq at the same index.
 	 * @param anotherSeq  The sequence used for the comparison.

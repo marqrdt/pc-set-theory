@@ -1,8 +1,8 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.*;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 /**
  * A CompositionMatrix (CM) is an n x m matrix of CMSegments. Each CMSegment contains an IPitchSequence and has

@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ import java.util.TreeSet;
 import java.util.logging.Logger;
 import java.util.regex.*;
 
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparable<PitchClassSet> {
 

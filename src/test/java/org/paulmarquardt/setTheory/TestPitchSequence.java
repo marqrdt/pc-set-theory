@@ -1,13 +1,13 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import junit.framework.TestCase;
 import junit.framework.Test;
 
 import java.lang.reflect.Array;
 import java.util.*;
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 public class TestPitchSequence extends TestCase {
 
@@ -151,6 +151,18 @@ public class TestPitchSequence extends TestCase {
 		}
 	}
 	
+	public void testPitchSequencePolarity() {
+		List<Integer> intArray =  Arrays.asList( 12, 14, 16, 18, 20, 22 );
+		PitchSequence testSeq = new PitchSequence( intArray );
+		assertTrue( "The polarity method returns 0.0 for sequence with only even intervals", testSeq.polarity() == 0.0 );
+		intArray =  Arrays.asList( 12, 15, 18, 19, 22, 27 );
+		testSeq = new PitchSequence( intArray );
+		assertTrue( "The polarity method returns 1.0 for sequence with only odd intervals", testSeq.polarity() == 1.0 );
+		intArray =  Arrays.asList( 12, 14, 18, 19, 22, 27, 28, 21, 13 );
+		testSeq = new PitchSequence( intArray );
+		assertTrue( String.format("The polarity method returns %f for sequence with mixed odd and even intervals", testSeq.polarity()), testSeq.polarity() < 1.0 && testSeq.polarity() > 0.0 );
+	}
+
 	public void testPitchSequenceEquals() {
 		Integer[] testArray = { 0,4,6,3,2,5,8 };
 		PitchSequence pSeq = new PitchSequence( testArray );

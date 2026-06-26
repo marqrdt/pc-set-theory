@@ -1,7 +1,7 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
-import com.newscores.setTheory.*;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 import java.util.*;
 import java.util.stream.IntStream;

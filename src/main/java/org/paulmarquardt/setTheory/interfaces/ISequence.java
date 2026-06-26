@@ -1,9 +1,9 @@
-package com.newscores.setTheory.interfaces;
+package org.paulmarquardt.setTheory.interfaces;
 
 import java.util.List;
 import java.util.Map;
 
-import com.newscores.setTheory.SequenceIdResolver;
+import org.paulmarquardt.setTheory.SequenceIdResolver;
 import com.fasterxml.jackson.databind.jsontype.impl.*;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.annotation.*;

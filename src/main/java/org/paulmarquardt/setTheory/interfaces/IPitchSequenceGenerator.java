@@ -1,6 +1,6 @@
-package com.newscores.setTheory.interfaces;
+package org.paulmarquardt.setTheory.interfaces;
 
-import com.newscores.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.PitchSequence;
 
 public interface IPitchSequenceGenerator {
 

@@ -1,11 +1,11 @@
-package com.newscores.setTheory.utils;
+package org.paulmarquardt.setTheory.utils;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import com.newscores.setTheory.interfaces.ISequence;
+import org.paulmarquardt.setTheory.interfaces.ISequence;
 import org.apache.commons.collections4.iterators.*;
 
 import java.util.logging.Logger;
@@ -16,8 +16,8 @@ import java.util.logging.Logger;
 //import org.paukov.combinatorics.*;
 import org.paukov.combinatorics3.Generator;
 
-//import com.newscores.setTheory.CMSegment;
-import com.newscores.setTheory.*;
+//import org.paulmarquardt.setTheory.CMSegment;
+import org.paulmarquardt.setTheory.*;
 
 public class RowUtils {
     // NUMBER_OF_TRANSFORMATIONS is the total number of row transformations T(12) x M(4) x R(2)

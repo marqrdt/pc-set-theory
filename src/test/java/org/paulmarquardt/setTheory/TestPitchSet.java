@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,9 +9,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSet;
-import com.newscores.setTheory.utils.SetUtils;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSet;
+import org.paulmarquardt.setTheory.utils.SetUtils;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

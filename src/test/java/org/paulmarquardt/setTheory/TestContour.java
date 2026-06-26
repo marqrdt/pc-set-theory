@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 /**
  * A PitchClassSequence is an ordered set or Pitch Classes (pcs), such that each member of the PitchClassSequence

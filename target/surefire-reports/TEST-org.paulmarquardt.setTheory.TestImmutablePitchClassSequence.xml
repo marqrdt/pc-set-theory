@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.018" tests="18" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/marqrdt/git/pc-set-theory/target/test-classes:/home/marqrdt/git/pc-set-theory/target/classes:/home/marqrdt/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/marqrdt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/marqrdt/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.0/jackson-databind-2.22.0.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.0/jackson-core-2.22.0.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/home/marqrdt/.m2/repository/com/github/dpaukov/combinatoricslib3/3.4.0/combinatoricslib3-3.4.0.jar:/home/marqrdt/.m2/repository/org/json/json/20260522/json-20260522.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="java.vm.vendor" value="Red Hat, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://www.redhat.com/"/>
+    <property name="user.timezone" value="America/Denver"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-25-openjdk/lib"/>
+    <property name="sun.java.command" value="/home/marqrdt/git/pc-set-theory/target/surefire/surefirebooter-20260626110012606_3.jar /home/marqrdt/git/pc-set-theory/target/surefire 2026-06-26T11-00-12_554-jvmRun1 surefire-20260626110012606_1tmp surefire_0-20260626110012606_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/marqrdt/git/pc-set-theory/target/test-classes:/home/marqrdt/git/pc-set-theory/target/classes:/home/marqrdt/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/marqrdt/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/marqrdt/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.0/jackson-databind-2.22.0.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar:/home/marqrdt/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.0/jackson-core-2.22.0.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/home/marqrdt/.m2/repository/com/github/dpaukov/combinatoricslib3/3.4.0/combinatoricslib3-3.4.0.jar:/home/marqrdt/.m2/repository/org/json/json/20260522/json-20260522.jar:/home/marqrdt/.m2/repository/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/marqrdt"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="/usr/lib/jvm/java-25-openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/marqrdt/git/pc-set-theory"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/marqrdt/git/pc-set-theory/target/surefire/surefirebooter-20260626110012606_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.3+9"/>
+    <property name="user.name" value="marqrdt"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="7.0.12-201.fc44.x86_64"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="(Red_Hat-25.0.3.0.9-1)"/>
+    <property name="localRepository" value="/home/marqrdt/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=java-25-openjdk&amp;version=42"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="25.0.3"/>
+    <property name="user.dir" value="/home/marqrdt/git/pc-set-theory"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Red Hat, Inc."/>
+    <property name="java.vm.version" value="25.0.3+9"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testPitchClassSequenceIntervals" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceStringConversions" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.001"/>
+  <testcase name="testPitchClassSequenceFromTransformationString" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.009"/>
+  <testcase name="testPitchClassSequenceTestLengthAndSize" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceTransformationIterator" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.004">
+    <system-out><![CDATA[ImmutablePitchClassSequence: T[0]      : <046325817>
+ImmutablePitchClassSequence: RT[0]     : <718523640>
+ImmutablePitchClassSequence: T[0]I     : <0869a74b5>
+ImmutablePitchClassSequence: RT[0]I    : <5b47a9680>
+ImmutablePitchClassSequence: T[0]M[5]  : <0863a145b>
+ImmutablePitchClassSequence: RT[0]M[5] : <b541a3680>
+ImmutablePitchClassSequence: T[0]M[7]  : <04692b871>
+ImmutablePitchClassSequence: RT[0]M[7] : <178b29640>
+ImmutablePitchClassSequence: T[1]      : <157436928>
+ImmutablePitchClassSequence: RT[1]     : <829634751>
+ImmutablePitchClassSequence: T[1]I     : <197ab8506>
+ImmutablePitchClassSequence: RT[1]I    : <6058ba791>
+ImmutablePitchClassSequence: T[1]M[5]  : <1974b2560>
+ImmutablePitchClassSequence: RT[1]M[5] : <0652b4791>
+ImmutablePitchClassSequence: T[1]M[7]  : <157a30982>
+ImmutablePitchClassSequence: RT[1]M[7] : <28903a751>
+ImmutablePitchClassSequence: T[2]      : <268547a39>
+ImmutablePitchClassSequence: RT[2]     : <93a745862>
+ImmutablePitchClassSequence: T[2]I     : <2a8b09617>
+ImmutablePitchClassSequence: RT[2]I    : <71690b8a2>
+ImmutablePitchClassSequence: T[2]M[5]  : <2a8503671>
+ImmutablePitchClassSequence: RT[2]M[5] : <1763058a2>
+ImmutablePitchClassSequence: T[2]M[7]  : <268b41a93>
+ImmutablePitchClassSequence: RT[2]M[7] : <39a14b862>
+ImmutablePitchClassSequence: T[3]      : <379658b4a>
+ImmutablePitchClassSequence: RT[3]     : <a4b856973>
+ImmutablePitchClassSequence: T[3]I     : <3b901a728>
+ImmutablePitchClassSequence: RT[3]I    : <827a109b3>
+ImmutablePitchClassSequence: T[3]M[5]  : <3b9614782>
+ImmutablePitchClassSequence: RT[3]M[5] : <2874169b3>
+ImmutablePitchClassSequence: T[3]M[7]  : <379052ba4>
+ImmutablePitchClassSequence: RT[3]M[7] : <4ab250973>
+ImmutablePitchClassSequence: T[4]      : <48a76905b>
+ImmutablePitchClassSequence: RT[4]     : <b50967a84>
+ImmutablePitchClassSequence: T[4]I     : <40a12b839>
+ImmutablePitchClassSequence: RT[4]I    : <938b21a04>
+ImmutablePitchClassSequence: T[4]M[5]  : <40a725893>
+ImmutablePitchClassSequence: RT[4]M[5] : <398527a04>
+ImmutablePitchClassSequence: T[4]M[7]  : <48a1630b5>
+ImmutablePitchClassSequence: RT[4]M[7] : <5b0361a84>
+ImmutablePitchClassSequence: T[5]      : <59b87a160>
+ImmutablePitchClassSequence: RT[5]     : <061a78b95>
+ImmutablePitchClassSequence: T[5]I     : <51b23094a>
+ImmutablePitchClassSequence: RT[5]I    : <a49032b15>
+ImmutablePitchClassSequence: T[5]M[5]  : <51b8369a4>
+ImmutablePitchClassSequence: RT[5]M[5] : <4a9638b15>
+ImmutablePitchClassSequence: T[5]M[7]  : <59b274106>
+ImmutablePitchClassSequence: RT[5]M[7] : <601472b95>
+ImmutablePitchClassSequence: T[6]      : <6a098b271>
+ImmutablePitchClassSequence: RT[6]     : <172b890a6>
+ImmutablePitchClassSequence: T[6]I     : <620341a5b>
+ImmutablePitchClassSequence: RT[6]I    : <b5a143026>
+ImmutablePitchClassSequence: T[6]M[5]  : <620947ab5>
+ImmutablePitchClassSequence: RT[6]M[5] : <5ba749026>
+ImmutablePitchClassSequence: T[6]M[7]  : <6a0385217>
+ImmutablePitchClassSequence: RT[6]M[7] : <7125830a6>
+ImmutablePitchClassSequence: T[7]      : <7b1a90382>
+ImmutablePitchClassSequence: RT[7]     : <28309a1b7>
+ImmutablePitchClassSequence: T[7]I     : <731452b60>
+ImmutablePitchClassSequence: RT[7]I    : <06b254137>
+ImmutablePitchClassSequence: T[7]M[5]  : <731a58b06>
+ImmutablePitchClassSequence: RT[7]M[5] : <60b85a137>
+ImmutablePitchClassSequence: T[7]M[7]  : <7b1496328>
+ImmutablePitchClassSequence: RT[7]M[7] : <8236941b7>
+ImmutablePitchClassSequence: T[8]      : <802ba1493>
+ImmutablePitchClassSequence: RT[8]     : <3941ab208>
+ImmutablePitchClassSequence: T[8]I     : <842563071>
+ImmutablePitchClassSequence: RT[8]I    : <170365248>
+ImmutablePitchClassSequence: T[8]M[5]  : <842b69017>
+ImmutablePitchClassSequence: RT[8]M[5] : <71096b248>
+ImmutablePitchClassSequence: T[8]M[7]  : <8025a7439>
+ImmutablePitchClassSequence: RT[8]M[7] : <9347a5208>
+ImmutablePitchClassSequence: T[9]      : <9130b25a4>
+ImmutablePitchClassSequence: RT[9]     : <4a52b0319>
+ImmutablePitchClassSequence: T[9]I     : <953674182>
+ImmutablePitchClassSequence: RT[9]I    : <281476359>
+ImmutablePitchClassSequence: T[9]M[5]  : <95307a128>
+ImmutablePitchClassSequence: RT[9]M[5] : <821a70359>
+ImmutablePitchClassSequence: T[9]M[7]  : <9136b854a>
+ImmutablePitchClassSequence: RT[9]M[7] : <a458b6319>
+ImmutablePitchClassSequence: T[10]     : <a241036b5>
+ImmutablePitchClassSequence: RT[10]    : <5b630142a>
+ImmutablePitchClassSequence: T[10]I    : <a64785293>
+ImmutablePitchClassSequence: RT[10]I   : <39258746a>
+ImmutablePitchClassSequence: T[10]M[5] : <a6418b239>
+ImmutablePitchClassSequence: RT[10]M[5]: <932b8146a>
+ImmutablePitchClassSequence: T[10]M[7] : <a2470965b>
+ImmutablePitchClassSequence: RT[10]M[7]: <b5690742a>
+ImmutablePitchClassSequence: T[11]     : <b35214706>
+ImmutablePitchClassSequence: RT[11]    : <60741253b>
+ImmutablePitchClassSequence: T[11]I    : <b758963a4>
+ImmutablePitchClassSequence: RT[11]I   : <4a369857b>
+ImmutablePitchClassSequence: T[11]M[5] : <b7529034a>
+ImmutablePitchClassSequence: RT[11]M[5]: <a4309257b>
+ImmutablePitchClassSequence: T[11]M[7] : <b3581a760>
+ImmutablePitchClassSequence: RT[11]M[7]: <067a1853b>
+]]></system-out>
+  </testcase>
+  <testcase name="testPitchSequenceT" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchSequenceEquals" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceGetMembers" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceFromString" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceI" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceM" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceR" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceCollectionOfInteger" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchClassSequenceSubSequence" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0">
+    <system-out><![CDATA[Using index = 0, length = 9
+First seq: <>, Second seq: <0 4 6 3 2 5 8 1 7>
+Using index = 1, length = 8
+First seq: <0>, Second seq: <4 6 3 2 5 8 1 7>
+Using index = 2, length = 7
+First seq: <0 4>, Second seq: <6 3 2 5 8 1 7>
+Using index = 3, length = 6
+First seq: <0 4 6>, Second seq: <3 2 5 8 1 7>
+Using index = 4, length = 5
+First seq: <0 4 6 3>, Second seq: <2 5 8 1 7>
+Using index = 5, length = 4
+First seq: <0 4 6 3 2>, Second seq: <5 8 1 7>
+Using index = 6, length = 3
+First seq: <0 4 6 3 2 5>, Second seq: <8 1 7>
+Using index = 7, length = 2
+First seq: <0 4 6 3 2 5 8>, Second seq: <1 7>
+]]></system-out>
+  </testcase>
+  <testcase name="testPitchClassSequencePcVector" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchSequence" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testPitchSequenceIntegerArray" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+  <testcase name="testGetEmbeddedSubsequence" classname="org.paulmarquardt.setTheory.TestImmutablePitchClassSequence" time="0.0"/>
+</testsuite>

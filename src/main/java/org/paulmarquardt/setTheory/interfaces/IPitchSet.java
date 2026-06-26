@@ -1,8 +1,8 @@
-package com.newscores.setTheory.interfaces;
+package org.paulmarquardt.setTheory.interfaces;
 
 import java.util.*;
 
-import com.newscores.setTheory.SetIdResolver;
+import org.paulmarquardt.setTheory.SetIdResolver;
 import com.fasterxml.jackson.databind.jsontype.impl.*;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.annotation.*;

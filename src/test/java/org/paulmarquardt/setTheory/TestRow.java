@@ -1,16 +1,16 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
 import java.util.*;
 
-import com.newscores.setTheory.PitchClassSet;
-import static com.newscores.setTheory.PitchClassSet.A;
-import static com.newscores.setTheory.PitchClassSet.A;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.Row;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import static org.paulmarquardt.setTheory.PitchClassSet.A;
+import static org.paulmarquardt.setTheory.PitchClassSet.A;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.Row;
+import org.paulmarquardt.setTheory.interfaces.*;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import java.nio.file.Files;

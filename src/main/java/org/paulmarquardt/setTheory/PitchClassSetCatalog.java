@@ -1,8 +1,8 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.*;
 import org.apache.commons.lang.*;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 public class PitchClassSetCatalog {
 

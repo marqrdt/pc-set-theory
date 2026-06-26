@@ -1,14 +1,14 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
 import java.util.*;
 
-import com.newscores.setTheory.PitchClassSequence;
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.PitchClassSequence;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 public class TestImmutablePitchClassSequence extends TestCase {
 

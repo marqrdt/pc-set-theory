@@ -1,13 +1,13 @@
-package com.newscores.setTheory.utils;
+package org.paulmarquardt.setTheory.utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.newscores.setTheory.CMSegment;
-import com.newscores.setTheory.CompositionMatrix;
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchClassSequenceTransformation;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.CMSegment;
+import org.paulmarquardt.setTheory.CompositionMatrix;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchClassSequenceTransformation;
+import org.paulmarquardt.setTheory.interfaces.*;
 import org.apache.commons.lang.StringUtils;
 
 public class CompositionMatrixUtils {

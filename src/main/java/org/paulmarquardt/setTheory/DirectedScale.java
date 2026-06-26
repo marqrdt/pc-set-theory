@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
 
-import com.newscores.setTheory.interfaces.IPitchSet;
+import org.paulmarquardt.setTheory.interfaces.IPitchSet;
 
 /**
  * The Scale class extends the PitchSet class by offering a different set of constructors that use a set

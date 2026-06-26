@@ -1,7 +1,7 @@
-package com.newscores.setTheory.utils;
+package org.paulmarquardt.setTheory.utils;
 
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSet;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSet;
 import java.util.*;
 import java.util.stream.*;
 import java.time.Instant;

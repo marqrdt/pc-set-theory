@@ -1,4 +1,4 @@
-package com.newscores.setTheory.interfaces;
+package org.paulmarquardt.setTheory.interfaces;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.*;

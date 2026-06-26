@@ -1,6 +1,6 @@
-package com.newscores.setTheory.utils;
+package org.paulmarquardt.setTheory.utils;
 
-import com.newscores.setTheory.*;
+import org.paulmarquardt.setTheory.*;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import java.util.stream.*;
 import java.time.Instant;
 
-import com.newscores.setTheory.interfaces.ISequence;
+import org.paulmarquardt.setTheory.interfaces.ISequence;
 import org.apache.commons.lang.math.IntRange;
 import org.paukov.combinatorics3.*;
 

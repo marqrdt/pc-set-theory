@@ -1,14 +1,14 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
-import com.newscores.setTheory.utils.SequenceUtils;
+import org.paulmarquardt.setTheory.utils.SequenceUtils;
 
 import junit.framework.TestCase;
 
 import java.util.*;
 
-import com.newscores.setTheory.PitchClassSequence;
-import com.newscores.setTheory.PitchClassSequenceTransformation;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.PitchClassSequence;
+import org.paulmarquardt.setTheory.PitchClassSequenceTransformation;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 import java.io.IOException;
 import java.nio.file.Files;

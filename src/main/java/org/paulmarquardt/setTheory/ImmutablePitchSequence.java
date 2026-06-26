@@ -1,9 +1,9 @@
- package com.newscores.setTheory;
+ package org.paulmarquardt.setTheory;
 
 import java.util.*;
 import java.util.regex.*;
 
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 public class ImmutablePitchSequence implements ISequence, Iterable {
 	List<Integer> pitches;

@@ -1,10 +1,10 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.*;
 import java.util.regex.*;
 import java.util.stream.Collectors;
 
-import com.newscores.setTheory.interfaces.ISequenceTransformation;
+import org.paulmarquardt.setTheory.interfaces.ISequenceTransformation;
 import org.apache.commons.lang3.StringUtils;
 
 /**

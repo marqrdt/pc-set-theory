@@ -1,23 +1,23 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.*;
-import com.newscores.setTheory.PitchClassSequence;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.ObjectSerializers;
-import com.newscores.setTheory.utils.*;;
+import org.paulmarquardt.setTheory.PitchClassSequence;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.ObjectSerializers;
+import org.paulmarquardt.setTheory.utils.*;;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 
-import com.newscores.setTheory.interfaces.*;
-import com.newscores.setTheory.utils.*;
+import org.paulmarquardt.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.utils.*;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,5 +1,5 @@
 
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import junit.framework.TestCase;
 
@@ -13,7 +13,7 @@ import java.util.stream.*;
 
 import org.json.JSONObject;
 
-import com.newscores.setTheory.utils.SequenceUtils;
+import org.paulmarquardt.setTheory.utils.SequenceUtils;
 
 public class TestSequenceUtils extends TestCase {
 

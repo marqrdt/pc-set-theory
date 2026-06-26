@@ -1,14 +1,14 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.*;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.newscores.setTheory.interfaces.IPitchSet;
-import com.newscores.setTheory.interfaces.IPitchCollection;
-import com.newscores.setTheory.interfaces.ISequence;
-import com.newscores.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.interfaces.IPitchSet;
+import org.paulmarquardt.setTheory.interfaces.IPitchCollection;
+import org.paulmarquardt.setTheory.interfaces.ISequence;
+import org.paulmarquardt.setTheory.PitchClassSet;
 
 /**
  * PitchSet class represents a set of pitches in vertical musical space, i.e. a unordered space that preserves

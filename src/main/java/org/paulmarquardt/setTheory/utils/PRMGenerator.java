@@ -1,4 +1,4 @@
-package com.newscores.setTheory.utils;
+package org.paulmarquardt.setTheory.utils;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

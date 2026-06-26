@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import com.newscores.setTheory.interfaces.IPitchSet;
-import com.newscores.setTheory.interfaces.IPitchCollection;
+import org.paulmarquardt.setTheory.interfaces.IPitchSet;
+import org.paulmarquardt.setTheory.interfaces.IPitchCollection;
 
 
 /**

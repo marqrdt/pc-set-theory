@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import static org.junit.Assert.*;
 
@@ -8,13 +8,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.newscores.setTheory.CMSegment;
-import com.newscores.setTheory.CompositionMatrix;
-import com.newscores.setTheory.PitchClassSequence;
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.interfaces.ISequence;
-import com.newscores.setTheory.utils.CompositionMatrixUtils;
+import org.paulmarquardt.setTheory.CMSegment;
+import org.paulmarquardt.setTheory.CompositionMatrix;
+import org.paulmarquardt.setTheory.PitchClassSequence;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.interfaces.ISequence;
+import org.paulmarquardt.setTheory.utils.CompositionMatrixUtils;
 import java.util.*;
 import java.util.Arrays;
 

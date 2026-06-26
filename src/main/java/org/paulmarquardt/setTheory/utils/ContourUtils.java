@@ -1,12 +1,12 @@
-package com.newscores.setTheory.utils;
+package org.paulmarquardt.setTheory.utils;
 
 import java.util.*;
 
-import com.newscores.setTheory.Contour;
-import com.newscores.setTheory.PitchClassSequence;
-import com.newscores.setTheory.PitchClassSet;
-import com.newscores.setTheory.PitchSequence;
-import com.newscores.setTheory.interfaces.*;
+import org.paulmarquardt.setTheory.Contour;
+import org.paulmarquardt.setTheory.PitchClassSequence;
+import org.paulmarquardt.setTheory.PitchClassSet;
+import org.paulmarquardt.setTheory.PitchSequence;
+import org.paulmarquardt.setTheory.interfaces.*;
 
 /**
  * A Contour describes a shape in space and time. It is a Compositional pattern (in the sense of the Composition Design Pattern, not Music Composition) consisting

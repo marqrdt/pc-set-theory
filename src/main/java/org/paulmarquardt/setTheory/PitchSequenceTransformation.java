@@ -1,4 +1,4 @@
-package com.newscores.setTheory;
+package org.paulmarquardt.setTheory;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.regex.*;
 import java.util.stream.Collectors;
 
-import com.newscores.setTheory.interfaces.ISequenceTransformation;
+import org.paulmarquardt.setTheory.interfaces.ISequenceTransformation;
 import org.apache.commons.lang3.StringUtils;
 
 /**
