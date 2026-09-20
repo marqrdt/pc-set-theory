@@ -1,0 +1,45 @@
+{
+	"rows":
+	[
+		{
+			"name": "Webern Opus 32",
+			"pitches": "0 1 2 e t 9 5 4 3 6 7 8",
+			"type": "Row"
+		},
+		{
+			"name": "Schoenberg Suite Opus 25",
+			"pitches": "0 1 3 6 7 9 8 t e 2 4 5",
+			"type": "Row"
+		},
+		{
+			"name": "Berg Kammerkonzert",
+			"pitches": "0 1 3 8 4 9 t 7 6 5 e 2",
+			"type": "Row"
+		},
+		{
+			"name": "Glass Music in Twelve Parts",
+			"pitches": "0 3 1 2 b 6 4 5 7 9 8 A",
+			"type": "Row"
+		},
+		{
+			"name": "Morris Not Lilacs (Mallalieu)",
+			"pitches": "0 1 4 2 9 5 e 3 8 t 7 6",
+			"type": "Row"
+		},
+		{
+			"name": "Stravinsy Agon Pas de Deux",
+			"pitches": "0 1 4 3 2 5 6 9 8 e t 7",
+			"type": "Row"
+		},
+		{
+			"name": "Babbitt Composition for Twelve Instruments",
+			"pitches": "0 1 4 9 5 8 3 t 2 e 6 7",
+			"type": "Row"
+		},
+		{
+			"name": "Slonimsky Grandmother Chord",
+			"pitches": "0 e 1 t 2 9 3 8 4 7 5 6",
+			"type": "Row"
+		}
+	]
+}

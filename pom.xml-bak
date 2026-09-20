@@ -3,38 +3,37 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.paulmarquardt</groupId>
     <artifactId>pc-set-theory</artifactId>
     <version>2.0.5</version>
     <packaging>jar</packaging>
-
     <name>pc-set-theory</name>
-    <description>A Java library for working with Musical Pitch Class Theory, mostly inspired by the work of the composer/theorist Robert Daniel Morris.</description>
-    <url>https://github.com/marqrdt/pc-set-theory</url>
+    <description>A Java library for working with Musical Pitch Class Theory mostly inspired by the work of the composer/theoristRobert Daniel Morris.</description>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
 
     <properties>
+        <!-- <source>8</source> -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Consumers need at least this JDK. Consider 17 or 21 for wider reach. -->
-        <maven.compiler.release>17</maven.compiler.release>
-        <!-- TODO: replace with the full 40-character fingerprint of the signing key:
-             gpg \-\-list-secret-keys \-\-with-fingerprint -->
-        <gpg.keyname>11C5BB48</gpg.keyname>
-        <!-- gpg.executable is machine-specific; set it in ~/.m2/settings.xml
-             (e.g. /usr/local/MacGPG2/bin/gpg2 on the Mac), not here. -->
+        <!-- <gpg.executable>/usr/bin/gpg</gpg.executable> -->
+        <gpg.executable>/usr/local/MacGPG2/bin/gpg2</gpg.executable>
     </properties>
 
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/marqrdt/pc-set-theory.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/marqrdt/pc-set-theory.git</developerConnection>
-        <url>https://github.com/marqrdt/pc-set-theory</url>
+        <connection>scm:github.com:marqrdt/pc-set-theory.git</connection>
+        <developerConnection>scm:git@github.com:marqrdt/pc-set-theory.git</developerConnection>
+        <url>github.com:marqrdt/pc-set-theory.git</url>
     </scm>
 
     <developers>
@@ -45,6 +44,17 @@
             <organizationUrl>http://www.paulmarquardt.org</organizationUrl>
         </developer>
     </developers>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
@@ -63,16 +73,20 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.22.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.20.0</version>
         </dependency>
+        <!--<dependency> <groupId>com.googlecode.combinatoricslib</groupId> <artifactId>combinatoricslib</artifactId>
+            <version>2.2</version> </dependency> -->
         <dependency>
             <groupId>com.github.dpaukov</groupId>
             <artifactId>combinatoricslib3</artifactId>
             <version>3.4.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -83,34 +97,37 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.6.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.googlecode.combinatoricslib/combinatoricslib -->
     </dependencies>
-
-    <!-- Normal builds get the compiler and test config, so dev and release builds match. -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.6.0-M1</version>
-                <configuration>
-                    <skipTests>false</skipTests>
-                    <forkCount>0</forkCount>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
     <profiles>
-        <!-- Release: mvn -Prelease clean deploy -->
         <profile>
-            <id>release</id>
+            <id>deploy-to-nexus</id>
+            <properties>
+                <!-- <gpg.keyname>76F6A08DF909A15E3775F2E25623F9C2F64F2D80</gpg.keyname> -->
+                <gpg.keyname>11C5BB48</gpg.keyname>
+            </properties>
             <build>
                 <plugins>
+                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.11.0</version>
+                        <configuration>
+                            <release>25</release>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.6.0-M1</version>
+                        <configuration>
+                            <skipTests>false</skipTests>
+                            <forkCount>0</forkCount>
+                            <!-- <excludes> <exclude>**/TestPhrase.java</exclude> </excludes>
+    -								<includes> <include>**/TestCounterpointUtils.java</include> <include>**/TestPhraseFileReader.java</include>
+    -								<include>**/TestPhrase.java</include> </includes> -->
+                        </configuration>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -124,6 +141,7 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <!-- -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
@@ -152,6 +170,8 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <configuration>
+                                    <gpgArguments>
+                                    </gpgArguments>
                                     <keyname>${gpg.keyname}</keyname>
                                     <passphraseServerId>${gpg.keyname}</passphraseServerId>
                                 </configuration>
@@ -161,7 +181,7 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.9.0</version>
+                        <version>0.9.0</version> <!-- check for the latest -->
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>

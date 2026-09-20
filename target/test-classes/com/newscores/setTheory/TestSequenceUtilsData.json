@@ -1,0 +1,49 @@
+{
+	"SetA":
+	{
+		"pitches":
+			"0,4,6,3,2,5,8",
+		"type":
+			"PitchClassSequence"
+	},
+	"SetB":
+	{
+		"pitches":
+			"0 B 1 2 A 8 5 3 9 4 7 6",
+		"type":
+			"PitchClassSequence"
+	},
+	"EmbeddedTestA":
+	{
+		"@type":"pitch_class_sequence",
+		"name":"A random PitchSequence",
+		"members":[0,1,2,3]
+	},
+	"EmbeddedMasterA1":
+	{
+		"@type":"pitch_class_sequence",
+		"name":"EmbeddedMasterA1",
+		"members":[1,4,0,7,2,10,8,10,3,9,10,0,1,6,1,0,10,9,2,1,3,5,4,9]
+	},
+	"EmbeddedMasterA2":
+	{
+		"@type":"pitch_class_sequence",
+		"name":"EmbeddedMasterA2",
+		"members":[1,4,0,7,2,10,8,10,3,9,10,0,1,6,1,0,10,9,2,1,3,5,4,9]
+	},
+	"SchoenbergVlnConHex":
+	{
+		"pitches":
+			"9 A 3 b 4 6",
+		"type":
+			"PitchClassSequence"
+	},
+	"GlassRow":
+	{
+		"pitches":
+			"0 3 1 2 b 6 4 5 7 9 8 A",
+		"type":
+			"PitchClassSequence"
+	}
+	
+}
