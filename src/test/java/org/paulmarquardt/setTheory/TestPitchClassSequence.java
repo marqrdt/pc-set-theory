@@ -394,4 +394,41 @@ public class TestPitchClassSequence extends TestCase {
 		}
 	}
 
+	public void testModernizedContracts() {
+		PitchClassSequence normalized = new PitchClassSequence(new Integer[] { -1, 12, 25 });
+		assertEquals("Pitch classes must be normalized with floor modulus.", "<B 0 1>", normalized.toString());
+		assertEquals("Custom sequence delimiters and separators must be honored.", "[B,0,1]",
+				normalized.toString("[", "]", ","));
+
+		PitchClassSequence equivalent = new PitchClassSequence(new Integer[] { 11, 0, 1 });
+		assertTrue("Object equality must recognize equivalent pitch-class sequences.",
+				normalized.equals((Object) equivalent));
+		assertEquals("Equal pitch-class sequences must share a hash code.",
+				normalized.hashCode(), equivalent.hashCode());
+
+		PitchClassSequence empty = new PitchClassSequence();
+		empty.applyTransposeTo(6);
+		assertEquals("Transposing an empty sequence in place must be a no-op.", 0, empty.length());
+		assertEquals("An empty sequence is embedded at no indices.", Collections.emptyList(),
+				normalized.getEmbeddedSubsequence(empty));
+
+		try {
+			normalized.intervals(0);
+			fail("A non-positive interval distance must be rejected.");
+		} catch (IllegalArgumentException expected) {
+			// Expected.
+		}
+
+		Iterator<PitchClassSequence> transformations = normalized.transformationIterator();
+		while (transformations.hasNext()) {
+			transformations.next();
+		}
+		try {
+			transformations.next();
+			fail("An exhausted transformation iterator must reject next().");
+		} catch (NoSuchElementException expected) {
+			// Expected.
+		}
+	}
+
 }

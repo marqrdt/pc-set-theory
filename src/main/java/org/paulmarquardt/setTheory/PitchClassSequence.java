@@ -69,15 +69,18 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 */
 	public PitchClassSequence( Collection<Integer> pitchesAsList ) {
 		super(pitchesAsList);
-		for ( int i = 0; i < this.getMembers().size(); i++ ) {
-			this.pitches.set(i,  this.pitches.get(i) % 12 );
+		for (int i = 0; i < this.pitches.size(); i++) {
+			this.pitches.set(i, PitchClassSet.mod(
+					Objects.requireNonNull(this.pitches.get(i), "pitchesAsList element"),
+					PitchClassSet.MODULUS));
 		}
 		setName("");
 	}
 
 
 	public void addPitch( Integer pitch ) {
-		this.pitches.add(pitch % PitchClassSet.MODULUS);
+		this.pitches.add(PitchClassSet.mod(Objects.requireNonNull(pitch, "pitch"),
+				PitchClassSet.MODULUS));
 	}
 
 	/**
@@ -95,7 +98,7 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	public PitchClassSequence transposeTo(int start) {
 		//PitchClassSequence outSeq = new PitchClassSequence( this );
 		if ( this.pitches.size() == 0 ) {
-			return this;
+			return new PitchClassSequence(this);
 		}
 		return this.T( start - this.getMembers().get(0) );
 	}
@@ -158,8 +161,9 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @param start  The integer to which the first element of the returned IPitchSequence will be transposed.
 	 */
 	public void applyTransposeTo(int start) {
-		//PitchClassSequence outSeq = new PitchClassSequence( this );
-		this.applyT( start - this.pitches.get(0) );
+		if (!this.pitches.isEmpty()) {
+			this.applyT(start - this.pitches.get(0));
+		}
 	}
 
 	/**
@@ -241,6 +245,9 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @return boolean value indicating if this equals anotherSeq.
 	 */
 	public boolean equals( ISequence anotherSeq ) {
+		if (anotherSeq == null) {
+			return false;
+		}
 		// return false immediately if sizes do not match so that the membership check does not
 		// fail on IndexOutOfBoundsException and to not waste time checking on objects with different lengths,
 		// which will always be unequal.
@@ -248,11 +255,23 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 			return false;
 		}
 		for ( int index = 0; index < this.pitches.size(); index++ ) {
-			if ( this.pitches.get(index) % 12 != anotherSeq.getMembers().get(index) % 12) {
+			if (!PitchClassSet.mod(this.pitches.get(index), PitchClassSet.MODULUS)
+					.equals(PitchClassSet.mod(anotherSeq.getMembers().get(index), PitchClassSet.MODULUS))) {
 				return false;
 			}
 		}
 		return true;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		return object == this || object instanceof PitchClassSequence
+				&& this.equals((PitchClassSequence) object);
+	}
+
+	@Override
+	public int hashCode() {
+		return this.pitches.hashCode();
 	}
 
 	/**
@@ -264,6 +283,9 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @return boolean value indicating if anotherSeq can be transformed into this under any combination of T, I or R.
 	 */
 	public boolean equivalent( ISequence anotherSeq ) {
+		if (anotherSeq == null) {
+			return false;
+		}
 		// return false immediately if sizes do not match so that the membership check does not
 		// fail on IndexOutOfBoundsException and to not waste time checking on objects with different lengths,
 		// which will always be unequal.
@@ -301,10 +323,8 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 */
 	public Integer[] pcVector() {
 		Integer[] vector = new Integer[12];
-		for ( int i = 0; i < PitchClassSet.MODULUS; i++ ) {
-			vector[i] = 0;
-		}
-		for ( Integer member : this.getMembers() ) {
+		Arrays.fill(vector, 0);
+		for (Integer member : this.pitches) {
 			vector[ member ]++;
 		}
 		return vector;
@@ -325,9 +345,13 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @return List of Integer representing consecutive intervals between consecutive members of this.
 	 */
 	public List<Integer> intervals( int distance ) {
-		List<Integer> vector = new ArrayList<Integer>();
-		for ( int i = 0; i < this.getMembers().size() - distance; i++ ) {
-			vector.add( PitchClassSet.mod( this.getMembers().get( i + distance ) - this.getMembers().get( i ), PitchClassSet.MODULUS ) );
+		if (distance <= 0) {
+			throw new IllegalArgumentException("distance must be positive.");
+		}
+		List<Integer> vector = new ArrayList<Integer>(Math.max(0, this.pitches.size() - distance));
+		for (int i = 0; i < this.pitches.size() - distance; i++) {
+			vector.add(PitchClassSet.mod(this.pitches.get(i + distance) - this.pitches.get(i),
+					PitchClassSet.MODULUS));
 		}
 		return vector;
 	}
@@ -345,12 +369,13 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 
 			private int index = 0;
 			public boolean hasNext() {
-				// TODO Auto-generated method stub
 				return ( index <  96 );
 			}
 			public PitchClassSequence next() {
-				// TODO Auto-generated method stub
-				StringBuffer transformationBuffer = new StringBuffer();
+				if (!hasNext()) {
+					throw new NoSuchElementException();
+				}
+				StringBuilder transformationBuffer = new StringBuilder();
 				int tIndex = index / 8;
 				int iIndex = index % 8;
 				//System.out.println( String.format("index: %d, iIndex: %d, iIndex mod 2 = %d, iIndex >> 1 = %d",index,  iIndex, iIndex % 2, iIndex >> 1 ) );
@@ -402,8 +427,7 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 			}
 
 			public void remove() {
-				// TODO Auto-generated method stub
-				
+				throw new UnsupportedOperationException();
 			}
 		}
 		return new TransformationIterator();
@@ -426,16 +450,20 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @return  A list of indices at which members of anotherPitchSequence can be found in this.
 	 */
 	public List<Integer> getEmbeddedSubsequence( IMutableSequence inSeq ) {
+		Objects.requireNonNull(inSeq, "inSeq");
 		// fail fast if inSeq has more members than this, making it impossible to be contained as a subsequence.
 		if ( inSeq.length() > this.length() ) {
 			return null;
 		}
+		if (inSeq.length() == 0) {
+			return new ArrayList<Integer>();
+		}
 		List<Integer> indices = new ArrayList<Integer>();
 		int counter = 0;
 		for ( int index = 0; index < this.length(); index++ ) {
-			int member = this.getMembers().get(index);
+			int member = this.pitches.get(index);
 			//System.out.println( String.format("getSubSequence => getMembers(%d) = %d", index, member) );
-			if ( inSeq.getMembers().get(counter) % PitchClassSet.MODULUS == member ) {
+			if (PitchClassSet.mod(inSeq.getMembers().get(counter), PitchClassSet.MODULUS) == member) {
 				//System.out.println( String.format("getSubSequence => found match in %sat %d", inSeq.toString(), index) );
 				indices.add( index );
 				counter++;
@@ -456,25 +484,26 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @return PitchSequence constructed from String of tokens representing pitches as Integers.
 	 */
 	public static PitchClassSequence getPitchClassSequenceFromString( String pcSeqString ) {
+		Objects.requireNonNull(pcSeqString, "pcSeqString");
 		List<Integer> pcList = new ArrayList<Integer>();
-		for ( Character pc : pcSeqString.toCharArray() ) {
-			if ( Character.isDigit(pc) ) {
-				pcList.add( new Integer( pc ) );
+		for (char pc : pcSeqString.toCharArray()) {
+			int digit = Character.digit(pc, 10);
+			if (digit >= 0) {
+				pcList.add(digit);
 			}
-			else if ( pc.toString().equalsIgnoreCase("a") ) {
-				pcList.add( new Integer( 10 ) );
+			else if (pc == 'a' || pc == 'A') {
+				pcList.add(PitchClassSet.A);
 			}
-			else if ( pc.toString().equalsIgnoreCase("b") ) {
-				pcList.add( new Integer( 11 ) );
+			else if (pc == 'b' || pc == 'B') {
+				pcList.add(PitchClassSet.B);
 			}
-			else if ( pc.toString().equalsIgnoreCase("t") ) {
-				//System.out.println( "Matches letter: " + pc );
-				pcList.add( 10  );
+			else if (pc == 't' || pc == 'T') {
+				pcList.add(PitchClassSet.A);
 			}
-			else if ( pc.toString().equalsIgnoreCase("e") ) {
-				//System.out.println( "Matches letter: " + pc );
-				pcList.add( 11 );
-			}		}
+			else if (pc == 'e' || pc == 'E') {
+				pcList.add(PitchClassSet.B);
+			}
+		}
 		return new PitchClassSequence( pcList );
 	}
 
@@ -624,21 +653,20 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @return  A String representation of this.
 	 */
 	public String toString(String inHead, String inTail, String inSeparator) {
-		String head = "";
-		String tail = "";
-		String separator = "";
-		
-		StringBuffer outputBuf = new StringBuffer();
-		outputBuf.append(head);
+		Objects.requireNonNull(inHead, "inHead");
+		Objects.requireNonNull(inTail, "inTail");
+		Objects.requireNonNull(inSeparator, "inSeparator");
+
+		StringBuilder outputBuf = new StringBuilder(inHead);
 		int count = 0;
 		for ( Integer elem : this.pitches ) {
-			outputBuf.append( Integer.toHexString(elem) );
+			outputBuf.append(Integer.toHexString(elem).toUpperCase(Locale.ROOT));
 			if ( count < this.pitches.size() - 1 ) {
 				outputBuf.append(inSeparator);
 			}
 			count++;
 		}
-		outputBuf.append(tail);
+		outputBuf.append(inTail);
 		return outputBuf.toString();
 	}
 
@@ -656,11 +684,11 @@ public class PitchClassSequence extends PitchSequence implements IMutableSequenc
 	 * @return The String representation of this prepended with its Transformation String. 
 	 */
 	public String toStringExtended() {
-		StringBuffer outputBuf = new StringBuffer();
+		StringBuilder outputBuf = new StringBuilder();
 		outputBuf.append( StringUtils.rightPad( this.getTransformation().toString(), 9) );
 		outputBuf.append(": <");
 		for ( Integer elem : this.pitches ) {
-			outputBuf.append( Integer.toHexString(elem) );
+			outputBuf.append(Integer.toHexString(elem).toUpperCase(Locale.ROOT));
 		}
 		outputBuf.append(">");
 		return outputBuf.toString();

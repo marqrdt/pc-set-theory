@@ -7,11 +7,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.logging.Logger;
 import java.util.regex.*;
 
 import org.paulmarquardt.setTheory.interfaces.*;
@@ -25,9 +27,8 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	private Integer[] membersArray;
 	private String name;
 	private String description;
-	private int modulus = PitchClassSet.MODULUS;
-	public static int A = 10;
-	public static int B = 11;
+	public static final int A = 10;
+	public static final int B = 11;
 	
 	/**
 	 * Constructor using a String containing pitch class tokens, which include single digits [0-9] and the letters 'a','b','A','B', with A = 10 amd B = 11
@@ -48,11 +49,8 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @param name  A name for this.
 	 */
 	public PitchClassSet( String pitchClassString, String name ) {
-		// this.members = new TreeSet<Integer>();
-		// default PitchClassSet has no members.
 		this( PitchClassSet.getPitchClassSetFromString( pitchClassString ).getMembers() );
-		PitchClassSet pcSet = PitchClassSet.getPitchClassSetFromString( pitchClassString );
-		//System.out.println( String.format("Set from string %s is %s", pitchClassString, pcSet.toString() ) );
+		this.setName(name);
 	}
 
 	/**
@@ -154,9 +152,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 
 	private void initMembersArray() {
 		this.membersArray = new Integer[PitchClassSet.MODULUS];
-		for (int index = 0; index < PitchClassSet.MODULUS; index++) {
-			this.membersArray[index] = 0;
-		}
+		Arrays.fill(this.membersArray, 0);
 	}
 
 	/**
@@ -300,7 +296,13 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return A PitchClassSet that is the complement of this PitchClassSet
 	 */
 	public PitchClassSet xor(PitchClassSet inPitchClassSet) {
-		return this.union(inPitchClassSet).complement();
+		PitchClassSet newSet = new PitchClassSet();
+		for (int i = 0; i < this.membersArray.length; i++) {
+			if (this.membersArray[i] != inPitchClassSet.membersArray[i]) {
+				newSet.addPitch(i);
+			}
+		}
+		return newSet;
 	}
 
 	/**
@@ -326,9 +328,9 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return List&lt;PitchClassSet&gt; of all subsets of this, including this and {} (the empty set).
 	 */
 	public List<PitchClassSet> subsetList() {
-		Logger log = Logger.getLogger( this.getName() );
+		List<Integer> members = this.getMembers();
 		List<PitchClassSet> subsets = new ArrayList<PitchClassSet>();
-		int powerSetRange = (int) Math.pow(2, this.getMembers().size()) - 1;
+		int powerSetRange = (1 << members.size()) - 1;
 		int index = 0;
 		while ( index <= powerSetRange ) {
 			int num = index;
@@ -338,7 +340,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 				//log.info(String.format("num = %d, setIndex = %d", num, setIndex));					
 				if ( (num % 2) == 1) {
 					//log.info(String.format("Adding PCSet member %d", this.pcSetAsArrayList().get(setIndex)));
-					pcSet.addPitch( this.pcSetAsArrayList().get(setIndex) );
+					pcSet.addPitch(members.get(setIndex));
 				}
 				num = num>>>1;
 				setIndex++;
@@ -355,15 +357,16 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return Iterator&lt;PitchClassSet&gt; of all subsets of this, including this and {} (the empty set).
 	 */
 	public Iterator<PitchClassSet> subsetIterator() {
-		// TODO Auto-generated method stub
-		final PitchClassSet thisSet = this;
+		final List<Integer> members = this.getMembers();
 		Iterator<PitchClassSet> setIt = new Iterator<PitchClassSet>() {
 			private int currentIndex = 0;
-			private boolean inversionSwitch = false;
 			public boolean hasNext() {
-				return currentIndex < (int) Math.pow(2, thisSet.size());
+				return currentIndex < (1 << members.size());
 			}
 			public PitchClassSet next() {
+				if (!hasNext()) {
+					throw new NoSuchElementException();
+				}
 				PitchClassSet pcSet = new PitchClassSet();
 				int num = currentIndex;
 				int setIndex = 0;
@@ -371,13 +374,17 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 					//log.info(String.format("num = %d, setIndex = %d", num, setIndex));					
 					if ( (num % 2) == 1) {
 						//log.info(String.format("Adding PCSet member %d", this.pcSetAsArrayList().get(setIndex)));
-						pcSet.addPitch( thisSet.pcSetAsArrayList().get(setIndex) );
+						pcSet.addPitch(members.get(setIndex));
 					}
 					num = num>>>1;
 					setIndex++;
 				}
 				currentIndex++;
 				return pcSet;
+			}
+			@Override
+			public void remove() {
+				throw new UnsupportedOperationException();
 			}
 		};
 		return setIt;
@@ -390,13 +397,14 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @param cardinality Iterate through subsets only of this cardinality.
 	 */
 	public Iterator<PitchClassSet> subsetIterator(int cardinality) {
-		// TODO Auto-generated method stub
 		final PitchClassSet thisSet = this;
 		final int setCardinality = cardinality;
+		if (cardinality < 0 || cardinality > thisSet.size()) {
+			return Collections.emptyIterator();
+		}
+		final List<Integer> members = this.getMembers();
 		Iterator<PitchClassSet> setIt = new Iterator<PitchClassSet>() {
-			Logger log = Logger.getLogger( thisSet.getName() );
 			private int currentIndex = 0;
-			private boolean foundAll = false;
 			List<Integer> matchingBitCounts = new ArrayList<Integer>();
 			public boolean hasNext() {
 				/*
@@ -406,7 +414,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 				 * equal to setCardinality.
 				*/
 				if ( currentIndex == 0 ) {
-					for ( int i = 0; i < (int) Math.pow(2, thisSet.size()); i++ ) {
+					for (int i = 0; i < (1 << members.size()); i++) {
 						if ( Integer.bitCount(i) == setCardinality ) {
 							matchingBitCounts.add(i);
 						}
@@ -420,14 +428,17 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 				}
 			}
 			public PitchClassSet next() {
+				if (!hasNext()) {
+					throw new NoSuchElementException();
+				}
 				PitchClassSet pcSet = new PitchClassSet();
 				int num = matchingBitCounts.get(currentIndex);
 				int setIndex = 0;
 				//while ( setIndex < thisSet.size() ) {
-				while ( num > 0 && setIndex < thisSet.size()) {
+				while (num > 0 && setIndex < members.size()) {
 					//log.info(String.format("num = %d, setIndex = %d", num, setIndex));					
 					if ( (num % 2) == 1) {
-						pcSet.addPitch( thisSet.pcSetAsArrayList().get(setIndex) );
+						pcSet.addPitch(members.get(setIndex));
 					}
 					num = num>>>1;
 					setIndex++;
@@ -440,6 +451,10 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 				currentIndex++;
 				return pcSet;
 			}
+			@Override
+			public void remove() {
+				throw new UnsupportedOperationException();
+			}
 		};
 		return setIt;
 	}
@@ -449,7 +464,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @param pitchToAdd  The PC to add to this.
 	 */
 	public void addPitch(Integer pitchToAdd) {
-		// return this.members.add( pitchToAdd );
+		Objects.requireNonNull(pitchToAdd, "pitchToAdd");
 		this.membersArray[mod(pitchToAdd, PitchClassSet.MODULUS)] = 1;
 	}
 
@@ -458,7 +473,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @param pitchToRemove  The PC to remove from this.
 	 */
 	public void removePitch(Integer pitchToRemove) {
-		// return this.members.add( pitchToAdd );
+		Objects.requireNonNull(pitchToRemove, "pitchToRemove");
 		this.membersArray[mod(pitchToRemove, PitchClassSet.MODULUS)] = 0;
 	}
 
@@ -468,6 +483,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return boolean  true if this contains pitch, false if not.
 	 */
 	public boolean containsPitch(Integer pitch) {
+		Objects.requireNonNull(pitch, "pitch");
 		return this.membersArray[mod(pitch, PitchClassSet.MODULUS)] == 1;
 	}
 
@@ -477,17 +493,17 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @param pitch  The String representing the PC to add to this.
 	 */
 	public void addPitch(String pitch) {
-		try {
-			if (pitch.equalsIgnoreCase("a")) {
-				this.membersArray[10] = 1;
-			} else if (pitch.equalsIgnoreCase("b")) {
-				this.membersArray[11] = 1;
-			} else {
+		Objects.requireNonNull(pitch, "pitch");
+		if (pitch.equalsIgnoreCase("a")) {
+			this.membersArray[A] = 1;
+		} else if (pitch.equalsIgnoreCase("b")) {
+			this.membersArray[B] = 1;
+		} else {
+			try {
 				this.membersArray[mod(Integer.decode(pitch), PitchClassSet.MODULUS)] = 1;
+			} catch (NumberFormatException exception) {
+				throw new IllegalArgumentException("Invalid pitch: " + pitch, exception);
 			}
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-			// ("Illegal pitch name: " + pitch);
 		}
 	}
 
@@ -527,7 +543,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 			pitches[index] = 0;
 		}
 		// set signature to the maximum possible value
-		int signature = (int) Math.pow(2.0, PitchClassSet.MODULUS);
+		int signature = 1 << PitchClassSet.MODULUS;
 		// Find the minimum pc in this.membersArray (this first non-zero
 		// element).
 		// Entry<PitchClassSet, Integer> min = null;
@@ -658,7 +674,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return  An array of members of this.
 	 */
 	public Integer[] getMembersArray() {
-		return this.membersArray;
+		return Arrays.copyOf(this.membersArray, this.membersArray.length);
 	}
 
 	/**
@@ -684,13 +700,11 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return  An Integer representing the signature
 	 */
 	public static Integer getSignature(Integer[] list) {
-		Integer signature = 0;
-		if (list.length == 0) {
-			return 0;
-		}
+		Objects.requireNonNull(list, "list");
+		int signature = 0;
 		for ( int index = 0; index < list.length; index++ ) {
 			if ( list[ index ] > 0 ) {
-				signature += (int) Math.pow( 2.0, index );
+				signature |= 1 << index;
 			}
 		}
 		return signature;
@@ -736,15 +750,18 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return Whether this is equal to anotherPcSet.
 	 */
 	public boolean equals(PitchClassSet anotherPcSet) {
-		/*
-		for (int index = 0; index < this.membersArray.length; index++) {
-			if (this.membersArray[index] != anotherPcSet.getMembersArray()[index]) {
-				return false;
-			}
-		}
-		return true;
-		*/
-		return this.getMembers().equals( anotherPcSet.getMembers() );
+		return anotherPcSet != null && Arrays.equals(this.membersArray, anotherPcSet.membersArray);
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		return object == this || object instanceof PitchClassSet
+				&& this.equals((PitchClassSet) object);
+	}
+
+	@Override
+	public int hashCode() {
+		return Arrays.hashCode(this.membersArray);
 	}
 
 	/**
@@ -755,13 +772,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 */
 	@Override
 	public int compareTo(PitchClassSet pitchClassSet) {
-		if ( this.getSignature() < pitchClassSet.getSignature() ) {
-			return -1;
-		}
-		if ( this.getSignature() == pitchClassSet.getSignature() ) {
-			return 0;
-		}
-		return 1;
+		return Integer.compare(this.getSignature(), pitchClassSet.getSignature());
 	}
 	/**
 	 * Returns an Integer representing the similarity of this to another PitchClassSet anotherPcSet.
@@ -800,7 +811,8 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 		}
 		return true;
 		*/
-		return this.getSignature().equals( new PitchClassSet(anotherPcSet).getSignature() );
+		return anotherPcSet != null
+				&& this.getSignature().equals(new PitchClassSet(anotherPcSet).getSignature());
 	}
 
 	/** 
@@ -934,18 +946,18 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 */
 	@Override
 	public String toString() {
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		sb.append("[");
 		for (int index = 0; index < this.membersArray.length; index++) {
 			if (this.membersArray[index] == 1) {
-				sb.append(Integer.toHexString(index).toUpperCase());
+				sb.append(Integer.toHexString(index).toUpperCase(Locale.ROOT));
 				/**
 				 * if ( index < this.membersArray.length ) { sb.append(", "); }
 				 **/
 			}
 		}
 		sb.append("]");
-		if ( this.getDescription() != null && this.getDescription() != "" ) {
+		if (this.getDescription() != null && !this.getDescription().isEmpty()) {
 			sb.append(" ");
 			sb.append( this.getDescription() );
 		}
@@ -957,18 +969,18 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return  The String representation of this.
 	 */
 	public String toStringExtended() {
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		sb.append("PCSet: [");
 		for (int index = 0; index < this.membersArray.length; index++) {
 			if (this.membersArray[index] == 1) {
-				sb.append(Integer.toHexString(index).toUpperCase());
+				sb.append(Integer.toHexString(index).toUpperCase(Locale.ROOT));
 				/**
 				 * if ( index < this.membersArray.length ) { sb.append(", "); }
 				 **/
 			}
 		}
 		sb.append("]");
-		if ( this.getDescription() != null && this.getDescription() != "" ) {
+		if (this.getDescription() != null && !this.getDescription().isEmpty()) {
 			sb.append(" ");
 			sb.append( this.getDescription() );
 		}
@@ -982,39 +994,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return An Integer that is the result of n % m.
 	 */
 	public static Integer mod(Integer n, Integer m) {
-		//Integer returnVal = 0;
-		if (n >= 0) {
-			return n % m;
-		} else {
-			return ( m + ( n % m ) ) % m;
-		}
-		//return returnVal;
-	}
-
-	/**
-	 * Required under the contract of the Iterable inerface. Possibly unused.
-	 * @return  Whether there are more elements in the iterator.
-	 */
-	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	/**
-	 * Required under the contract of the Iterable inerface. Possibly unused.
-	 * @return  The next Object in the iterator..
-	 */
-	public Object next() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/**
-	 * Required under the contract of the Iterable inerface. Possibly unused.
-	*/
-	public void remove() {
-		// TODO Auto-generated method stub
-
+		return Math.floorMod(n, m);
 	}
 
 	/**
@@ -1022,7 +1002,6 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return  An Iterator that will iterate through all elements in this.
 	 */
 	public Iterator<PitchClassSet> iterator() {
-		// TODO Auto-generated method stub
 		final PitchClassSet thisSet = this;
 		Iterator<PitchClassSet> setIt = new Iterator<PitchClassSet>() {
 
@@ -1034,6 +1013,9 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 			}
 
 			public PitchClassSet next() {
+				if (!hasNext()) {
+					throw new NoSuchElementException();
+				}
 				if (!inversionSwitch) {
 					inversionSwitch = !inversionSwitch;
 					PitchClassSet returnSet = new PitchClassSet(thisSet.T(currentIndex));
@@ -1049,7 +1031,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 			}
 
 			public void remove() {
-
+				throw new UnsupportedOperationException();
 			}
 		};
 		return setIt;
@@ -1060,22 +1042,24 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return Iterator  An Iterator that will iterate through all 4096 possible combinations of 12 PCs.
 	 */
 	public static Iterator<PitchClassSet> allPitchClassSetsIterator() {
-		// TODO Auto-generated method stub
 		Iterator<PitchClassSet> setIt = new Iterator<PitchClassSet>() {
 
 			int signature = -1;
 			public boolean hasNext() {
-				return signature < 4096;
+				return signature < (1 << PitchClassSet.MODULUS) - 1;
 			}
 
 			public PitchClassSet next() {
+				if (!hasNext()) {
+					throw new NoSuchElementException();
+				}
 				signature += 1;
 				//System.out.println( String.format("Calling next() with value %d", signature ) ); 
 				return PitchClassSet.getPitchClassSetFromSignature(signature);
 			}
 
 			public void remove() {
-
+				throw new UnsupportedOperationException();
 			}
 		};
 		return setIt;
@@ -1104,7 +1088,11 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return The size of this.
 	 */
 	public int size() {
-		return this.getMembers().size();
+		int count = 0;
+		for (Integer member : this.membersArray) {
+			count += member;
+		}
+		return count;
 	}
 
 	/**
@@ -1121,7 +1109,7 @@ public class PitchClassSet implements IPitchSet,Iterable<PitchClassSet>,Comparab
 	 * @return The size of this.
 	 */
 	public int length() {
-		return this.getMembers().size();
+		return this.size();
 	}
 
 	/**

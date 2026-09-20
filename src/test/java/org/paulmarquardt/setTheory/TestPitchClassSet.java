@@ -788,4 +788,28 @@ public class TestPitchClassSet extends TestCase {
 					aSet.T(i).intervalSpread()), aSet.T(i).intervalSpread() == 2);
 		}
 	}
+
+	public void testCollectionAndIteratorContracts() {
+		PitchClassSet first = new PitchClassSet("037");
+		PitchClassSet equal = new PitchClassSet("037");
+		PitchClassSet second = new PitchClassSet("048");
+
+		assertEquals("Equal pitch-class sets must share a hash code.", first.hashCode(), equal.hashCode());
+		assertTrue("Object equality must recognize equal pitch-class sets.", first.equals((Object) equal));
+		assertFalse("Object equality must reject distinct pitch-class sets.", first.equals((Object) second));
+		assertTrue("XOR must retain pitches in exactly one input set.",
+				first.xor(new PitchClassSet("035")).equals(new PitchClassSet("57")));
+
+		Integer[] members = first.getMembersArray();
+		members[0] = 0;
+		assertTrue("The member-array accessor must not expose mutable state.", first.containsPitch(0));
+
+		Iterator<PitchClassSet> allSets = PitchClassSet.allPitchClassSetsIterator();
+		int count = 0;
+		while (allSets.hasNext()) {
+			allSets.next();
+			count++;
+		}
+		assertEquals("The twelve-tone universe has 4096 distinct pitch-class sets.", 4096, count);
+	}
 }
