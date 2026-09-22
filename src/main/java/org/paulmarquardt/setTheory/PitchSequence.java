@@ -481,7 +481,7 @@ public class PitchSequence extends BaseSequence implements IMutableSequence, Ite
 		int counter = 0;
 		for ( int index = 0; index < this.length(); index++ ) {
 			int member = this.getMembers().get(index);
-			if ( inSeq.getMembers().get(counter) == member ) {
+			if ( counter < inSeq.length() && inSeq.getMembers().get(counter) == member ) {
 				indices.add( index );
 				counter++;
 			}

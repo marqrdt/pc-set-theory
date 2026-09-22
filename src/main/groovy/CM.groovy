@@ -1,10 +1,9 @@
 import java.util.*
 
-import com.newscores.setTheory.*
-import com.newscores.setTheory.utils.*
-import com.newscores.setTheory.interfaces.*
-import com.newscores.setTheory.SetTheoryFactories
-import com.newscores.notation.*
+import org.paulmarquardt.setTheory.*
+import org.paulmarquardt.setTheory.utils.*
+import org.paulmarquardt.setTheory.interfaces.*
+import org.paulmarquardt.setTheory.SetTheoryFactories
 
 import java.util.*
 

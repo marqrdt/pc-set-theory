@@ -1,5 +1,5 @@
-import com.newscores.setTheory.*
-import com.newscores.setTheory.utils.*
+import org.paulmarquardt.setTheory.*
+import org.paulmarquardt.setTheory.utils.*
 
 import java.util.*
 

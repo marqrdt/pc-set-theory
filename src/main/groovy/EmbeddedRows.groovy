@@ -1,6 +1,6 @@
-import com.newscores.setTheory.*
-import com.newscores.setTheory.utils.*
-import static com.newscores.setTheory.SetTheoryFactories.*
+import org.paulmarquardt.setTheory.*
+import org.paulmarquardt.setTheory.utils.*
+import static org.paulmarquardt.setTheory.SetTheoryFactories.*
 import java.util.*
 
 A = 10

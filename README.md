@@ -29,13 +29,15 @@ Here is a basic walk through of the framework
 
 ### How do I get set up? ###
 
-* The Set Theory project uses Maven as a build tool.
-* I try to keep dependencies at a minimum. Currently, it uses only junit and commons-lang
-* Dependencies are managed my Maven and there should be no need to manage them manually.
+* The project supports Maven and Gradle. Use the checked-in Gradle wrapper with JDK 17 or later:
+  `./gradlew test`.
+* The Groovy samples under `src/main/groovy` compile with the library and can be run with their
+  corresponding Gradle tasks, for example `./gradlew runQuickTour`.
+* Dependencies are managed by the build tools; no manual dependency setup is required.
 
 ### How do I use these libraries? ###
 
-* You do not need the Java code to use the library. In your build tool (Gradle, Maven, Leningen, etc), just add the depdendency for com.newscores.setTheory.
+* You do not need the Java code to use the library. In your build tool (Gradle, Maven, Leiningen, etc), add the published `org.paulmarquardt:pc-set-theory` dependency.
 * Browse the [ Maven repository](https://search.maven.org/) for the latest version. Javadocs are available [here](http://newscores-public-web.s3-website-us-east-1.amazonaws.com/overview-summary.html).
 * A build.gradle and sample Groovy scripts are included in src/main/groovy.
 

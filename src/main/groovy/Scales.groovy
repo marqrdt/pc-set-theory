@@ -1,11 +1,10 @@
-import org.marqrdt.notation.*
-import com.newscores.setTheory.*
-import com.newscores.setTheory.utils.*
+import org.paulmarquardt.setTheory.*
+import org.paulmarquardt.setTheory.utils.*
 import java.util.*
 import groovy.json.*
-import static com.newscores.setTheory.PitchClassSet.A
-import static com.newscores.setTheory.PitchClassSet.B
-import static com.newscores.setTheory.SetTheoryFactories.*
+import static org.paulmarquardt.setTheory.PitchClassSet.A
+import static org.paulmarquardt.setTheory.PitchClassSet.B
+import static org.paulmarquardt.setTheory.SetTheoryFactories.*
 
 println "A walk through Scales sets"
 

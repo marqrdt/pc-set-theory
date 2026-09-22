@@ -1,10 +1,9 @@
-import org.marqrdt.notation.*
-import com.newscores.setTheory.*
-import com.newscores.setTheory.utils.*
+import org.paulmarquardt.setTheory.*
+import org.paulmarquardt.setTheory.utils.*
 import java.util.*
-import static com.newscores.setTheory.PitchClassSet.A
-import static com.newscores.setTheory.PitchClassSet.B
-import static com.newscores.setTheory.SetTheoryFactories.*
+import static org.paulmarquardt.setTheory.PitchClassSet.A
+import static org.paulmarquardt.setTheory.PitchClassSet.B
+import static org.paulmarquardt.setTheory.SetTheoryFactories.*
 
 println "A walk through PitchClass sets"
 
@@ -116,10 +115,10 @@ println "Using PitchSequence randomSeq, we create from it a PitchClassSequence r
 def myRow = new Row([ 0,B,1,2,A,8,5,3,9,4,7,6 ])
 def finished = false
 index = 0
-def subSeq = new PitchClassSequence( randomPCSeq.subSequence(index, randomPCSeq.size() ) )
+def subSeq = new PitchClassSequence(randomPCSeq.subSequence(index, randomPCSeq.size()))
 while ( ! finished ) {
-	def subSeqLength = subSeq.size() - index
-	subSeq = new PitchClassSequence( randomPCSeq.subSequence(index, subSeqLength ) )
+	def subSeqLength = randomPCSeq.size() - index
+	subSeq = new PitchClassSequence(randomPCSeq.subSequence(index, subSeqLength))
 	//def subSeq = randomPCSeq.subSequence(index, 50) 
 	def embedded = subSeq.getEmbeddedSubsequence( myRow )
 	if ( embedded == null ) {

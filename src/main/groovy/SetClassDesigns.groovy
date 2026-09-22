@@ -1,8 +1,5 @@
 package org.marqrdt
 
-import org.marqrdt.notation.*
-import com.newscores.setTheory.*
-import com.newscores.counterpoint.*
 
 import java.util.*
 

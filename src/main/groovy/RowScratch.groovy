@@ -1,9 +1,8 @@
 import java.util.*
 
-import com.newscores.setTheory.*
-import com.newscores.setTheory.utils.*
-import static com.newscores.setTheory.SetTheoryFactories.*
-import com.newscores.notation.*
+import org.paulmarquardt.setTheory.*
+import org.paulmarquardt.setTheory.utils.*
+import static org.paulmarquardt.setTheory.SetTheoryFactories.*
 
 import java.util.*
 
@@ -172,5 +171,4 @@ new File(lilypondOutfilePath).withWriter('utf-8') {
 	writer -> writer.writeLine cmDecorator.output()
 }
  **/
-
 
